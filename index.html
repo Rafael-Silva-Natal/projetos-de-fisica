@@ -1,87 +1,988 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Estudo Contemporâneo dos Pêndulos</title>
+    <!-- MathJax para renderização de equações LaTeX no formato do PDF -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        @charset "UTF-8";
+
+        :root {
+          --cor-texto: #242424;
+          --cor-secundaria: #626262;
+          --cor-destaque: #243b53;
+          --cor-linha: #d9dee5;
+          --fundo: #f3f5f7;
+          --papel: #ffffff;
+        }
+
+        * {
+          box-sizing: border-box;
+        }
+
+        body {
+          margin: 0;
+          padding: 36px 18px;
+          background: var(--fundo);
+          color: var(--cor-texto);
+          font-family: Georgia, "Times New Roman", serif;
+          line-height: 1.6;
+        }
+
+        .pagina {
+          width: min(900px, 100%);
+          margin: 0 auto;
+          padding: 56px 68px;
+          background: var(--papel);
+          border: 1px solid var(--cor-linha);
+          box-shadow: 0 8px 28px rgba(20, 35, 50, 0.07);
+        }
+
+        .cabecalho {
+          margin-bottom: 34px;
+          padding-bottom: 24px;
+          text-align: center;
+          border-bottom: 2px solid var(--cor-destaque);
+        }
+
+        .identificacao {
+          margin: 0 0 8px;
+          color: var(--cor-secundaria);
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 0.72rem;
+          font-weight: 700;
+          letter-spacing: 0.17em;
+        }
+
+        h1 {
+          margin: 0;
+          color: var(--cor-destaque);
+          font-size: 2rem;
+          font-weight: 700;
+          letter-spacing: 0.04em;
+          text-transform: uppercase;
+        }
+
+        .subtitulo {
+          margin: 9px 0 0;
+          color: var(--cor-secundaria);
+          font-size: 0.96rem;
+          font-style: italic;
+        }
+
+        .sumario {
+          max-width: 760px;
+          margin: 0 auto 40px auto;
+        }
+
+        .sumario ol {
+          margin-top: 7px;
+          margin-bottom: 7px;
+          padding-left: 28px;
+        }
+
+        .lista-principal {
+          padding-left: 30px;
+        }
+
+        .sumario li {
+          padding: 3px 0 3px 4px;
+          color: var(--cor-texto);
+        }
+
+        .sumario > .lista-principal > li {
+          margin: 10px 0;
+          font-size: 1.02rem;
+        }
+
+        .sumario > .lista-principal > li > ol {
+          margin-top: 8px;
+        }
+
+        .sumario a {
+          color: inherit;
+          text-decoration: none;
+          text-underline-offset: 3px;
+          transition: color 0.15s ease;
+        }
+
+        .sumario a:hover {
+          color: var(--cor-destaque);
+          text-decoration: underline;
+        }
+
+        .sumario > .lista-principal > li > a {
+          font-weight: 700;
+        }
+
+        .sumario > .lista-principal > li > ol > li > a {
+          font-weight: 600;
+        }
+
+        .sumario ol ol {
+          font-size: 0.96rem;
+        }
+
+        .sumario ol ol ol {
+          color: #454545;
+          font-size: 0.93rem;
+        }
+
+        .img {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          margin: 25px 0;
+        }
+
+        .img img {
+          max-width: 100%;
+          height: auto;
+          border: 1px dashed #bbb;
+          padding: 4px;
+        }
+
+        .img-placeholder {
+          width: 100%;
+          padding: 20px;
+          border: 2px dashed var(--cor-destaque);
+          background-color: #f8fafc;
+          text-align: center;
+          color: var(--cor-secundaria);
+          font-family: Arial, sans-serif;
+          font-size: 0.9rem;
+          margin: 15px 0;
+        }
+
+        .img-placeholder code {
+          color: var(--cor-destaque);
+          font-weight: bold;
+        }
+
+        /* Estilização das Seções do Texto */
+        section {
+          margin-bottom: 35px;
+        }
+
+        h2 {
+          color: var(--cor-destaque);
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 1.4rem;
+          border-bottom: 1px solid var(--cor-linha);
+          padding-bottom: 6px;
+          margin-top: 40px;
+        }
+
+        h3 {
+          color: var(--cor-texto);
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 1.15rem;
+          margin-top: 25px;
+        }
+
+        h4 {
+          color: var(--cor-secundaria);
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 1rem;
+          margin-top: 20px;
+        }
+
+        p {
+          text-align: justify;
+          text-indent: 1.5em;
+          margin: 12px 0;
+        }
+
+        blockquote {
+          margin: 20px 40px;
+          padding: 10px 20px;
+          background: #f9f9f9;
+          border-left: 4px solid var(--cor-destaque);
+          font-style: italic;
+        }
+
+        table {
+          width: 100%;
+          border-collapse: collapse;
+          margin: 20px 0;
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 0.9rem;
+        }
+
+        table, th, td {
+          border: 1px solid var(--cor-linha);
+        }
+
+        th, td {
+          padding: 10px;
+          text-align: center;
+        }
+
+        th {
+          background-color: #f0f4f8;
+          color: var(--cor-destaque);
+        }
+
+        ul {
+          margin: 10px 0;
+          padding-left: 30px;
+        }
+
+        .introducao3 {
+          text-align: center;
+          font-size: 1rem;
+          font-family: Arial, Helvetica, sans-serif;
+          color: var(--cor-texto);
+          line-height: 1.4;
+        }
+
+        .rodape {
+          margin-top: 36px;
+          padding-top: 14px;
+          border-top: 1px solid var(--cor-linha);
+          color: var(--cor-secundaria);
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 0.78rem;
+          text-align: center;
+        }
+
+        @media (max-width: 640px) {
+          body {
+            padding: 0;
+            background: var(--papel);
+          }
+
+          .pagina {
+            padding: 32px 22px;
+            border: 0;
+            box-shadow: none;
+          }
+
+          h1 {
+            font-size: 1.65rem;
+          }
+
+          .sumario ol {
+            padding-left: 22px;
+          }
+
+          .lista-principal {
+            padding-left: 24px;
+          }
+
+          blockquote {
+            margin: 15px 10px;
+          }
+        }
+
+        @media print {
+          @page {
+            size: A4;
+            margin: 2cm;
+          }
+
+          body {
+            padding: 0;
+            background: #fff;
+            font-size: 10.5pt;
+          }
+
+          .pagina {
+            width: 100%;
+            padding: 0;
+            border: 0;
+            box-shadow: none;
+          }
+
+          .sumario a {
+            color: #000;
+          }
+        }
+    </style>
 </head>
-<style>
-    .img {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-.introdução1 {
-    text-align: justify;
-    font-size: 30px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: rgb(0, 0, 0);
-
-    text-indent: 2em;
-    margin: 20px;
-}
-
-.introdução {
-    text-align: justify;
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: rgb(0, 0, 0);
-
-    text-indent: 2em;
-    margin: 20px;
-}
-
-.introdução3 {
-    text-align: center;
-    font-size: 25px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: rgb(0, 0, 0);
-    
-}
-
-</style>
 <body>
-    
-       
-    <div class="img">
-     <img src="imagens/cabeçalho.png" alt="Cabeçalho IFRN">
-</div>
-<br>
- <br>
- <p class="introdução3">
-       Tutor responsável:  <br><br>
-       Prof. Dr. Melquisedec Lourenço da Silva 
-    </p>
-    <p class="introdução3">
-Discentes: <br><br>
 
-Rafael Bruno da Silva 
-<br><br>
-Igor Vitorino da Luz
+    <main class="pagina">
+        <header class="cabecalho">
+            <div class="img">
+                <!-- Imagem do Cabeçalho IFRN / FNDE -->
+                <img src="" alt="Cabeçalho IFRN / FNDE">
+            </div>
+            <p class="identificacao">ARTIGO CIENTÍFICO - PET FÍSICA IFRN-CNAT</p>
+            <h1>ESTUDO CONTEMPORÂNEO DOS PÊNDULOS</h1>
+            <p class="subtitulo">Análise física, matemática e energética do mecanismo</p>
+            
+            <br>
+            <div class="introducao3">
+                <p style="text-indent: 0;"><strong>Tutor responsável:</strong><br>Prof. Dr. Melquisedec Lourenço da Silva</p>
+                <p style="text-indent: 0;"><strong>Discentes:</strong><br>Rafael Bruno da Silva<br>Igor Vitorino da Luz</p>
+            </div>
+        </header>
 
-</p>
- <br>
- <br>
-      
-<div class="img">
-     <img src="imagens/baner.jpg" alt="Cabeçalho IFRN">
-</div>
-<br>
- <br>
- <br>
- <br>
- <p class="introdução1">
-Introdução 
- </p>
- <p class="introdução">
-A busca pelo movimento perpétuo e pela geração ilimitada de energia transcendeu séculos de história da ciência, saltando dos aparatos conceituais do século XIX para o ecossistema digital contemporâneo, onde a proliferação de vídeos virais e fake physics frequentemente distorce leis fundamentais da natureza em troca de engajamento.
-</p>
-<p class="introdução">
-Este trabalho contrapõe a desinformação científica e oferece uma ferramenta físico-didática para investigação da possibilidade de criação de um motor-perpétuo, permitindo coletas de dados e pesquisas com tecnologias atuais para a solução do problema. Por meio de uma análise experimental e rigorosa do comportamento de queda de pesos em pêndulo acoplados à geradores, apresenta as equações correspondentes à dinâmica do experimento utilizando o método científico para quantificar o rendimento energético real de um sistema mecânico, ao passo que contextualiza com as razões históricas da impossibilidade do movimento perpétuo.
-</p>
-<p class="introdução">
-Trata-se, portanto, de uma investigação prática que não apenas reafirma a beleza e a firmeza da física clássica, mas se consolida como uma ferramenta pedagógica viva no combate às pseudociências da era digital. Permitindo que verdadeiros estudantes busquem soluções reais através de ferramentas reais. 
- </p>
+        <!-- SUMÁRIO DA PÁGINA -->
+        <nav class="sumario" aria-label="Sumário do trabalho">
+          <ol class="lista-principal">
+            <li><a href="#introducao">Introdução</a></li>
+            <li><a href="#tema">Tema</a></li>
+            <li><a href="#teoria">Fundamentação teórica</a></li>
+            <li><a href="#maquina">Apresentação da máquina</a></li>
+
+            <li>
+              <a href="#conceitos">Conceitos matemáticos e físicos aplicados</a>
+              <ol>
+                <li>
+                  <a href="#segunda-lei">Segunda Lei de Newton</a>
+                  <ol>
+                    <li><a href="#direcao-radial">Direção radial</a></li>
+                    <li><a href="#direcao-tangencial">Direção tangencial</a></li>
+                    <li><a href="#forca-gravitacional">Força gravitacional</a></li>
+                    <li><a href="#aceleracao-angular">Aceleração angular</a></li>
+                    <li><a href="#forca-radial">Força radial</a></li>
+                    <li><a href="#aplicacoes-newton">Aplicações dos cálculos à máquina</a></li>
+                    <li><a href="#aceleracao-centripeta">Cálculo da aceleração centrípeta</a></li>
+                    <li><a href="#forca-resultante">Cálculo da força resultante centrípeta</a></li>
+                  </ol>
+                </li>
+                <li>
+                  <a href="#queda-corpo">Queda de um corpo em movimento circular, preso a uma haste rígida</a>
+                  <ol>
+                    <li><a href="#centro-massa">Centro de massa do conjunto</a></li>
+                    <li><a href="#momento-inercia">Momento de inércia da haste e das massas acopladas</a></li>
+                    <li><a href="#torque">Torque ou momento de força</a></li>
+                    <li><a href="#conservacao-energia">Conservação da energia mecânica</a></li>
+                    <li><a href="#velocidades">Velocidades angular e linear</a></li>
+                    <li><a href="#tracao">Tração em corpos presos a uma haste rígida</a></li>
+                    <li><a href="#calculo-tracao">Cálculo da tração durante o movimento circular</a></li>
+                    <li><a href="#aplicacoes-haste">Aplicações dos cálculos à máquina</a></li>
+                    <li><a href="#haste-experimento">A haste rígida do experimento</a></li>
+                  </ol>
+                </li>
+                <li>
+                  <a href="#engrenagens">Elementos de máquinas: engrenagens</a>
+                  <ol>
+                    <li><a href="#descricao-engrenagens">Descrição do sistema de engrenagens do aparelho</a></li>
+                    <li><a href="#relacao-rotacoes">Relação matemática entre as rotações</a></li>
+                    <li><a href="#aplicacoes-engrenagens">Aplicações dos cálculos à máquina</a></li>
+                    <li><a href="#multiplicacao-rotacao">Cálculo da multiplicação de rotação em cada estágio</a></li>
+                    <li><a href="#segundo-estagio">Segundo estágio: engrenagem maior e pinhão</a></li>
+                    <li><a href="#transmissao-total">Relação total de transmissão</a></li>
+                    <li><a href="#rotacoes-frequencias">Cálculo das rotações e frequências</a></li>
+                    <li><a href="#consequencias-mecanicas">Consequências mecânicas da multiplicação de rotação</a></li>
+                  </ol>
+                </li>
+                <li>
+                  <a href="#dinamica-gerador">Dinâmica de máquinas: gerador elétrico</a>
+                  <ol>
+                    <li><a href="#motor-gerador">Características do motor-gerador RF-300C-11440</a></li>
+                    <li><a href="#relacoes-fisicas">Relações físicas aplicadas ao sistema</a></li>
+                    <li><a href="#energia-potencial">Energia potencial gravitacional</a></li>
+                    <li><a href="#transmissao-engrenagens">Transmissão por engrenagens</a></li>
+                    <li><a href="#geracao-tensao">Geração de tensão elétrica</a></li>
+                    <li><a href="#rotacao-frequencia">Rotação do pinhão e frequência elétrica do gerador</a></li>
+                    <li><a href="#conclusao-mecanismo">Síntese da análise do mecanismo</a></li>
+                    <li><a href="#haste-pinhao">Relação matemática entre a haste e o pinhão</a></li>
+                    <li><a href="#queda-angulos">Análise da queda em intervalos angulares</a></li>
+                    <li><a href="#angulo-maximo">Determinação do ângulo máximo de queda</a></li>
+                    <li><a href="#energia-hipotese">Energia potencial disponível nessa hipótese</a></li>
+                  </ol>
+                </li>
+                <li>
+                  <a href="#medicoes-eletricas">Medições elétricas</a>
+                  <ol>
+                    <li><a href="#multimetro">Instrumentação elétrica: multímetro MXT YX-360TRn</a></li>
+                  </ol>
+                </li>
+              </ol>
+            </li>
+
+            <li>
+              <a href="#coleta-dados">Coleta e análise de dados</a>
+              <ol>
+                <li>
+                  <a href="#perdas-mecanicas">Estimativa das perdas de energia por resistências mecânicas</a>
+                  <ol>
+                    <li><a href="#analise-perdas">Análise comparativa das perdas por resistências mecânicas</a></li>
+                    <li><a href="#queda-maquina">Queda do peso no pêndulo da máquina</a></li>
+                    <li><a href="#queda-ideal">Queda do peso no pêndulo ideal</a></li>
+                    <li><a href="#comparacao-sistemas">Comparação entre os dois sistemas</a></li>
+                    <li><a href="#interpretacao">Interpretação dos resultados</a></li>
+                  </ol>
+                </li>
+                <li>
+                  <a href="#moto-perpetuo">Verificação da energia necessária ao funcionamento em ciclo contínuo</a>
+                  <ol>
+                    <li><a href="#funcionamento-energetico">Funcionamento energético da máquina</a></li>
+                    <li><a href="#energia-mecanica">Identificação da energia mecânica necessária</a></li>
+                    <li><a href="#energia-gerada">Relação entre a energia elétrica gerada e a energia mecânica necessária</a></li>
+                    <li><a href="#questao-moto-perpetuo">A questão do moto-perpétuo</a></li>
+                    <li><a href="#dados-reais">Coleta de dados reais para os cálculos da máquina</a></li>
+                    <li><a href="#queda-18g">Análise da queda de aproximadamente 18 g na máquina</a></li>
+                  </ol>
+                </li>
+                <li>
+                  <a href="#associacao-geradores">Associação de geradores</a>
+                  <ol>
+                    <li><a href="#geracao-eletrica">Efeitos da associação sobre a geração elétrica</a></li>
+                    <li><a href="#aspecto-experimento">Um aspecto relevante para o experimento</a></li>
+                  </ol>
+                </li>
+              </ol>
+            </li>
+
+            <li>
+              <a href="#contextualizacao">Contextualização histórica e crítica</a>
+              <ol>
+                <li>
+                  <a href="#maquina-joule">A máquina de Joule</a>
+                  <ol>
+                    <li><a href="#analise-joule">Análise crítica e relações com o projeto experimental</a></li>
+                  </ol>
+                </li>
+                <li><a href="#fake-physics">Desinformação científica: o fenômeno da “fake physics”</a></li>
+                <li><a href="#tecnologias-atuais">Busca por soluções em tecnologias atuais</a></li>
+              </ol>
+            </li>
+            <li><a href="#conclusao">Conclusão</a></li>
+          </ol>
+        </nav>
+
+        <div class="img">
+            <img src="imagens/baner - Copia.jpg" alt="Banner do Projeto">
+        </div>
+
+        <!-- CORPO DO TEXTO ADAPTADO -->
+
+        <section id="introducao">
+            <h2>Introdução</h2>
+            <div class="img-placeholder">
+                <img src="imagens/joule_portrait.png" alt="Retrato de James Prescott Joule" style="max-width: 200px;"><br>
+                <code>Caminho da imagem: imagens/joule_portrait.png</code>
+            </div>
+            <p>Retornando ao embate sobre geração de energia infinita, a mostra científica propõe uma análise contemporânea e com as tecnologias atuais na pesquisa de sistemas de geração de energia, contextualizando com os fatos da História e seus pensadores.</p>
+            
+            <blockquote>
+                "A energia não pode ser criada nem destruída: pode apenas ser transformada de uma forma para outra."<br>
+                — <strong>Julius Robert von Mayer (1842)</strong>
+            </blockquote>
+            <blockquote>
+                "O movimento perpétuo é impossível."<br>
+                — <strong>Hermann von Helmholtz (1847)</strong>
+            </blockquote>
+            <blockquote>
+                "Nada se cria do nada..."<br>
+                — <strong>James Prescott Joule (1843)</strong>
+            </blockquote>
+
+            <p>A busca pelo movimento perpétuo e pela geração ilimitada de energia transcendeu séculos de história da ciência, saltando dos aparatos conceituais do século XIX para o ecossistema digital contemporâneo, onde a proliferação de vídeos virais e <em>fake physics</em> frequentemente distorce leis fundamentais da natureza em troca de engajamento.</p>
+            <p>Este trabalho contrapõe a desinformação científica e oferece uma ferramenta físico-didática para investigação da possibilidade de criação de um motor-perpétuo, permitindo coletas de dados e pesquisas com tecnologias atuais para a solução do problema. Por meio de uma análise experimental e rigorosa do comportamento de queda de pesos em pêndulo acoplados à geradores, apresenta as equações correspondentes à dinâmica do experimento utilizando o método científico para quantificar o rendimento energético real de um sistema mecânico, ao passo que contextualiza com as razões históricas da impossibilidade do movimento perpétuo.</p>
+            <p>Trata-se, portanto, de uma investigação prática que não apenas reafirma a beleza e a firmeza da física clássica, mas se consolida como uma ferramenta pedagógica viva no combate às pseudociências da era digital. Permitindo que verdadeiros estudantes busquem soluções reais através de ferramentas reais.</p>
+        </section>
+
+        <section id="tema">
+            <h2>Tema</h2>
+            <p><strong>Estudo contemporâneo dos pêndulos.</strong></p>
+            <p><strong>Objetivo principal:</strong> Propor uma ferramenta física para estudo e investigação do movimento perpétuo.</p>
+            <p><strong>Objetivos específicos:</strong></p>
+            <ul>
+                <li>Pesquisar tecnologias atuais para a solução do problema.</li>
+                <li>Estudar as razões históricas da impossibilidade do motor-perpétuo.</li>
+                <li>Oferecer uma ferramenta físico-didática para o ensino da Física.</li>
+                <li>Apresentar as equações correspondentes à dinâmica do experimento.</li>
+            </ul>
+        </section>
+
+        <section id="teoria">
+            <h2>Apresentação da teoria</h2>
+            <p>O projeto propõe uma ferramenta didática para a amostra científica, a ferramenta constitui-se de um sistema que quantifica a geração de energia em um gerador em relação à queda de pesos. Diferente da máquina de Joule que expressa valores somente para um evento, a ferramenta propõe variações de análises. Fazendo uso de engrenagens para aumento de frequência, analisando a quantidade de geradores e variações nos pesos, a máquina propõe uma análise profunda sobre a quantidade de energia que a queda de um corpo pode produzir, verificando também se essa energia produzida é capaz de alimentar um sistema perpétuo de movimento.</p>
+            <p>A máquina é composta por um pêndulo concêntrico e unido a uma engrenagem que funcionará como engrenagem motriz, em paralelo à engrenagem motriz está a engrenagem multiplicadora composta de duas engrenagens concêntricas de raios diferentes. A engrenagem motriz exerce força na engrenagem de raio menor. Em paralelo à engrenagem multiplicadora de raio maior, temos a engrenagem que rotaciona o eixo do gerador (Pinhão). E na saída do gerador temos um aparelho de medição elétrica. Externo a todo o sistema motriz, a máquina possui um transferidor para medidas dos ângulos do movimento pendular.</p>
+            <p>Os cálculos físicos da máquina exploram os princípios fundamentais da Segunda Lei de Newton relacionando a força Peso como força motriz do sistema. Os cálculos exploram também os conceitos físicos de movimentos circulares onde temos a queda de um peso em um sistema de pêndulo descrevendo a queda em forma circular. O estudo dos movimentos circulares também é usado para explicar as engrenagens da máquina e sua finalidade no aumento da frequência de rotações. Os cálculos da máquina abordam também os conceitos de Geradores elétricos, associação de geradores e medidas elétricas, abordando também as Forças dissipativas de um sistema.</p>
+            <p>A teoria do projeto consiste em analisar se a quantidade de energia gerada pela queda de um corpo possibilita alimentar outro sistema capaz de manter-se em movimento contínuo. No experimento, a amostra de peso é conectada na extremidade do pêndulo e levada ao topo para se obter a queda livre. Observando o transferidor anota-se o ângulo inicial da queda. Em seguida, provoca-se o desequilíbrio sem exercer forças a favor da gravidade, para que o peso caia e descreva sua queda em forma circular. Após a queda do peso observa-se o ângulo da altura máxima que o peso alcançou no sistema pendular. Anota-se também a quantidade de energia que aparece nos medidores elétricos conectados ao gerador. Obtida a relação de pesos e geração de energia, calcula-se a quantidade de energia necessária para que o peso complete a rotação no pêndulo a partir do ângulo da altura máxima que o peso alcançou no evento da queda.</p>
+            <p>Existem várias possibilidades de análises, seja na mudança de pesos, na mudança do sistema de engrenagens, na mudança do raio do pêndulo, ou na associação de geradores. A partir da coleta de dados pode-se concluir por conta própria se um sistema de movimento perpétuo é capaz ou não de ser construído. Concluindo assim o objetivo teórico do projeto, que é oferecer uma ferramenta que quantifica a energia gerada na queda de um corpo, investigando a possibilidade de construção de um moto-perpétuo.</p>
+        </section>
+
+        <section id="maquina">
+            <h2>Apresentação da máquina</h2>
+            <div class="img-placeholder">
+                <img src="imagens/maquina_vistas.png" alt="Vistas da Máquina"><br>
+                <code>Caminho da imagem: imagens/maquina_vistas.png</code>
+            </div>
+            <div class="img-placeholder">
+                <img src="imagens/maquina_esquema.png" alt="Esquema técnico do sistema pendular e engrenagens"><br>
+                <code>Caminho da imagem: imagens/maquina_esquema.png</code>
+            </div>
+            <p>O corpo da máquina tem como base uma plataforma feita de madeira MDF, composta basicamente por três recortes de madeira encaixados de forma que dois recortes servem de equilíbrio (pés) do recorte de madeira que servirá de plano para a montagem do sistema pendular.</p>
+            <p>O sistema pendular é composto basicamente por uma haste de $20,6\text{ cm}$, com uma extremidade contendo um parafuso que serve de presilha para pesos de metal, e na outra extremidade, a haste é conectada a um eixo que possui a engrenagem que funciona como motriz do sistema, e possui um raio de $24\text{ mm}$. Concêntrico ao eixo do pêndulo também temos um transferidor centralizado e alinhado para medida de ângulos. Considera-se essa perspectiva como sendo a parte frontal da máquina.</p>
+            <p>Na associação de engrenagens; conectada em série à engrenagem motriz, temos a engrenagem multiplicadora, composta de duas engrenagens de raios $22,5\text{ mm}$ e $4,5\text{ mm}$ respectivamente, paralelas e concêntricas. Em série com a engrenagem multiplicadora temos a engrenagem do pinhão de $1,5\text{ mm}$ de raio, que serve para a rotação do eixo de um pequeno motor de driver RF-300C-11440 na configuração de gerador.</p>
+            
+            <div class="img-placeholder">
+                <img src="imagens/motor_gerador.png" alt="Motor-Gerador RF-300C e Detalhe do Transferidor"><br>
+                <code>Caminho da imagem: imagens/motor_gerador.png</code>
+            </div>
+            <div class="img-placeholder">
+                <img src="imagens/maquina_traseira.png" alt="Parte traseira da máquina e conexões"><br>
+                <code>Caminho da imagem: imagens/maquina_traseira.png</code>
+            </div>
+            <p>Na parte de trás da máquina pode ser observada apenas a furação de encaixe do motor-gerador, e seus respectivos polos soldados a um conector de áudio tipo borne de pressão para amplificadores, servindo de saídas elétricas do gerador, com a finalidade de conectar as agulhas dos medidores elétricos.</p>
+        </section>
+
+        <section id="conceitos">
+            <h2>Conceitos matemáticos e físicos aplicados</h2>
+            
+            <article id="segunda-lei">
+                <h3>Segunda Lei de Newton</h3>
+                <p>A Segunda Lei de Newton estabelece que a aceleração de um corpo é determinada pela força resultante que atua sobre ele e por sua massa. Em termos físicos, uma força resultante maior produz maior aceleração para uma mesma massa, enquanto um corpo de maior massa exige uma força maior para alcançar a mesma aceleração.</p>
+                <p>Essa lei é expressa matematicamente pela relação entre força resultante, massa e aceleração:</p>
+                $$\sum \vec{F} = m \cdot \vec{a}$$
+                <p>Em que:</p>
+                <ul>
+                    <li>$\vec{F}$ é a força resultante, medida em newtons ($\text{N}$).</li>
+                    <li>$m$ é a massa do corpo, medida em quilogramas ($\text{kg}$).</li>
+                    <li>$\vec{a}$ é a aceleração do corpo, em metros por segundo ao quadrado ($\text{m/s}^2$).</li>
+                </ul>
+                <p>No caso de uma massa em movimento circular, mesmo que sua velocidade escalar permaneça constante, sua direção muda continuamente. Por isso, existe uma aceleração direcionada para o centro da trajetória, chamada aceleração centrípeta.</p>
+                <p>Quando uma massa está presa a uma haste rígida e se movimenta em uma trajetória circular, a haste restringe seu movimento a uma distância aproximadamente constante em relação ao eixo de rotação. Nesse caso, é necessário analisar as forças em duas direções distintas:</p>
+
+                <h4 id="direcao-radial">A) Direção radial</h4>
+                <p>É a direção que aponta para o centro da trajetória circular. A componente radial da força resultante produz a aceleração centrípeta, responsável pela mudança contínua da direção da velocidade.</p>
+
+                <h4 id="direcao-tangencial">B) Direção tangencial</h4>
+                <p>É a direção tangente à trajetória. A componente tangencial da força resultante altera o módulo da velocidade da massa, fazendo-a acelerar ou desacelerar.</p>
+
+                <p>Essas duas componentes são importantes porque, durante uma queda ao longo de uma trajetória circular, a massa pode apresentar simultaneamente aceleração centrípeta e aceleração tangencial.</p>
+                <p>A aceleração centrípeta é dada por:</p>
+                $$a_c = \frac{v^2}{r}$$
+                <p>Em que:</p>
+                <ul>
+                    <li>$a_c$ é a aceleração centrípeta ($\text{m/s}^2$);</li>
+                    <li>$v$ é a velocidade tangencial da massa ($\text{m/s}$);</li>
+                    <li>$r$ é o raio da trajetória circular ($\text{m}$).</li>
+                </ul>
+
+                <p>Aplicando a Segunda Lei de Newton na direção radial, obtemos:</p>
+                $$\sum F_r = m \frac{v^2}{r}$$
+                <p>Essa expressão indica que a força resultante dirigida para o centro depende da massa, do quadrado da velocidade e do raio da trajetória.</p>
+                <p>Considere uma massa $m$ presa à extremidade de uma haste de comprimento $r$, articulada em um eixo fixo. Quando a massa é liberada de uma posição inclinada, a gravidade pode fazê-la descer descrevendo um arco de circunferência.</p>
+                <ul>
+                    <li>A haste é rígida e possui massa desprezível;</li>
+                    <li>O eixo de rotação é fixo;</li>
+                    <li>A massa está concentrada em um ponto;</li>
+                    <li>A resistência do ar e o atrito no eixo são desprezíveis;</li>
+                    <li>O campo gravitacional é uniforme, com $g \approx 9,81\text{ m/s}^2$.</li>
+                </ul>
+                <p>Definindo $\theta$ como o ângulo entre a haste e a vertical para baixo, podemos estudar o movimento por meio de três relações.</p>
+
+                <h4 id="forca-gravitacional">Força gravitacional</h4>
+                <p>O peso da massa é dado por:</p>
+                $$P = m \cdot g$$
+                <p>A componente tangencial é:</p>
+                $$F_t = m \cdot g \cdot \sin\theta$$
+                <p>Portanto, pela Segunda Lei de Newton:</p>
+                $$m \cdot g \cdot \sin\theta = m \cdot a_t \implies a_t = g \cdot \sin\theta$$
+                <p>Essa relação mostra que a aceleração tangencial depende da inclinação da haste em relação à vertical, e não da massa do corpo.</p>
+
+                <h4 id="aceleracao-angular">Aceleração angular</h4>
+                <p>Como a massa percorre um arco de raio $r$, a aceleração tangencial também pode ser escrita como:</p>
+                $$a_t = r \cdot \alpha$$
+                <p>Em que $\alpha$ representa a aceleração angular, medida em radianos por segundo ao quadrado. Substituindo na equação anterior:</p>
+                $$m \cdot r \cdot \alpha = m \cdot g \cdot \sin\theta$$
+                <p>Logo:</p>
+                $$\alpha = \frac{g}{r} \sin\theta$$
+                <p>Essa equação descreve como a gravidade produz aceleração angular durante o movimento da haste.</p>
+
+                <h4 id="forca-radial">Força radial</h4>
+                <p>A força radial resultante é responsável por manter a massa na trajetória circular:</p>
+                $$\sum F_r = m \frac{v^2}{r}$$
+                <p>Para o modelo descrito, adotando o sentido radial para dentro como positivo, a componente radial do peso é $m \cdot g \cdot \cos\theta$. Se $F_{\text{haste},r}$ representa a componente radial da força exercida pela haste sobre a massa, então:</p>
+                $$F_{\text{haste},r} - m \cdot g \cdot \cos\theta = m \frac{v^2}{r}$$
+                <p>Assim:</p>
+                $$F_{\text{haste},r} = m \frac{v^2}{r} + m \cdot g \cdot \cos\theta$$
+                <p>O sinal da força exercida pela haste indica sua direção: ela pode atuar para fora ou para dentro, conforme as condições do movimento. Diferentemente de um fio flexível, uma haste rígida pode exercer tração ou compressão.</p>
+
+                <h4 id="aplicacoes-newton">Aplicações dos cálculos à máquina</h4>
+                <p>Considerando uma massa de $0,02\text{ kg}$, presa a uma haste de $0,21\text{ m}$, que passa por um ponto da trajetória com velocidade tangencial de $2\text{ m/s}$.</p>
+                
+                <h4 id="aceleracao-centripeta">Cálculo da aceleração centrípeta</h4>
+                <p>Utilizamos a fórmula e substituindo os valores:</p>
+                $$a_c = \frac{v^2}{r} = \frac{2^2}{0,21} \approx 19,05\text{ m/s}^2$$
+
+                <h4 id="forca-resultante">Cálculo da força resultante centrípeta</h4>
+                <p>Aplicando a Segunda Lei de Newton na direção radial e substituindo os valores:</p>
+                $$F_r = m \cdot a_c = 0,02 \cdot 19,05 \approx 0,381\text{ N}$$
+                <p><strong>Interpretação física:</strong> para uma massa de 20 gramas que percorre uma trajetória circular de raio 21 centímetros a uma velocidade tangencial de $2\text{ m/s}$, a resultante das forças na direção radial deve ter módulo aproximado de $0,381\text{ N}$, orientada para o centro da trajetória.</p>
+                <p>Esse valor corresponde à força resultante radial, e não necessariamente à força exercida exclusivamente pela haste. Para calcular a força da haste, seria necessário conhecer também a posição angular da massa e considerar a componente radial da gravidade.</p>
+            </article>
+
+            <article id="queda-corpo">
+                <h3>Queda de um corpo em movimento circular preso a uma haste rígida</h3>
+                <p>A aceleração centrípeta e a força resultante radial nesta análise nos permitem ampliar o estudo para outras propriedades mecânicas do sistema. O objetivo é estudar como a distribuição de massa, a geometria da haste, a energia e as restrições do movimento influenciam a queda dos corpos.</p>
+
+                <h4 id="centro-massa">Centro de massa do conjunto</h4>
+                <p>O centro de massa representa a posição média da distribuição de massa de um sistema. Em um mecanismo formado por uma haste rígida e uma ou mais massas acopladas a ela, sua posição depende tanto da massa da haste quanto da posição e da massa dos corpos presos a ela. Para um sistema de corpos discretos, a posição do centro de massa é calculada por:</p>
+                $$x_{CM} = \frac{\sum_i m_i x_i}{\sum_i m_i}$$
+                <p>De forma semelhante, podem ser calculadas as coordenadas $y_{CM}$ e $z_{CM}$, conforme a geometria do sistema. Para uma haste uniforme de comprimento $L$, massa $M_h$ e uma massa pontual $m$ localizada a uma distância $d$ de uma extremidade, temos:</p>
+                $$x_{CM} = \frac{M_h (L/2) + m \cdot d}{M_h + m}$$
+                <p>Essa expressão considera a extremidade usada como origem das coordenadas. O centro de massa da haste uniforme, isoladamente, encontra-se no seu ponto médio, mas a massa acoplada desloca o centro de massa do conjunto. Conhecer o centro de massa ajuda a identificar como a distribuição de peso influencia o equilíbrio, o torque gravitacional e a resposta dinâmica do mecanismo durante a queda.</p>
+
+                <h4 id="momento-inercia">Momento de inércia da haste e das massas acopladas</h4>
+                <p>O momento de inércia mede a resistência de um corpo à alteração de seu movimento de rotação. Ele depende da quantidade de massa e de como essa massa está distribuída em relação ao eixo de rotação. Para uma haste uniforme, de massa $M_h$ e comprimento $L$, articulada em uma extremidade:</p>
+                $$I_h = \frac{1}{3} M_h \cdot L^2$$
+                <p>Para uma massa pontual $m$, localizada a uma distância $r$ do eixo:</p>
+                $$I_m = m \cdot r^2$$
+                <p>Assim, para uma haste com uma massa pontual acoplada:</p>
+                $$I_{\text{total}} = \frac{1}{3} M_h L^2 + m \cdot r^2$$
+                <p>Essa relação permite investigar como a posição de uma massa na haste modifica a resistência à rotação. Para a mesma massa, quanto maior a distância ao eixo, maior será sua contribuição para o momento de inércia. A expressão pressupõe que a haste gira em torno de uma extremidade fixa e que a massa acoplada pode ser aproximada por um ponto material.</p>
+
+                <h4 id="torque">Torque ou momento de força</h4>
+                <p>O torque representa a capacidade de uma força produzir rotação em torno de um eixo. No movimento de queda, a força gravitacional pode gerar um torque que acelera a haste e as massas acopladas. Para uma massa pontual a uma distância $r$ do eixo, o módulo do torque gravitacional é:</p>
+                $$\tau_g = m \cdot g \cdot r \cdot \sin\theta$$
+                <p>Em que $\theta$ é o ângulo entre a haste e a vertical para baixo. A dinâmica rotacional do sistema é descrita por:</p>
+                $$\sum \tau = I_{\text{total}} \cdot \alpha$$
+                <p>Essa relação é a forma rotacional da Segunda Lei de Newton. Ela permite determinar a aceleração angular a partir do torque resultante e do momento de inércia. Comparar o torque gravitacional em diferentes posições da haste ajuda a explicar por que a aceleração angular varia durante a queda.</p>
+
+                <h4 id="conservacao-energia">Conservação da energia mecânica</h4>
+                <p>Transformação da energia potencial gravitacional em energia cinética durante a queda. Quando o sistema desce, sua energia potencial diminui. Em condições ideais, sem atrito ou resistência do ar, essa variação corresponde ao aumento da energia cinética de rotação.</p>
+                $$E_p + E_c = \text{constante}$$
+                <p>Para um sistema que gira em torno de um eixo fixo:</p>
+                $$M \cdot g \cdot \Delta h_{CM} = \frac{1}{2} I_{\text{total}} \cdot \omega^2$$
+                <p>A expressão considera que o sistema parte do repouso e que $M$ representa a massa total do conjunto, enquanto $\Delta h_{CM}$ é a descida vertical de seu centro de massa. A velocidade angular final é representada por $\omega$. A equação permite estimar a velocidade angular alcançada após uma determinada queda, desde que sejam conhecidos o momento de inércia e a variação da altura do centro de massa.</p>
+
+                <h4 id="velocidades">Velocidade angular e velocidade linear</h4>
+                <p>Em uma haste rígida que gira em torno de um eixo fixo, todos os pontos possuem a mesma velocidade angular instantânea, mas suas velocidades lineares dependem da distância ao eixo. A relação é:</p>
+                $$v = \omega \cdot r$$
+                <p>Assim, um ponto localizado mais distante do eixo apresenta maior velocidade linear para a mesma velocidade angular. A aceleração tangencial também pode ser relacionada à aceleração angular:</p>
+                $$a_t = \alpha \cdot r$$
+                <p>No experimento da máquina, observando diferentes pontos da haste, é possível comparar suas velocidades e acelerações lineares, mesmo que todos pertençam ao mesmo corpo rígido.</p>
+
+                <h4 id="tracao">Tração em corpos presos a uma haste rígida</h4>
+                <p>A tração é uma força de contato que tende a puxar um corpo ao longo de um elemento que o conecta a outro corpo ou a um suporte. No estudo de movimentos circulares, ela aparece principalmente quando a massa está presa por um fio ou cabo.</p>
+                <p>No projeto, existe uma distinção importante: uma haste rígida pode exercer tanto tração quanto compressão, dependendo das forças e do movimento. Por isso, é mais geral falar em força exercida pela haste sobre a massa. Se o corpo estiver preso por um fio flexível, a força transmitida pelo fio é denominada tensão ou tração no fio.</p>
+
+                <h4 id="calculo-tracao">Como calcular a tração no movimento circular</h4>
+                <p>Considere uma massa $m$ presa a um fio de comprimento $r$, girando em uma trajetória circular vertical. A força de tração depende da velocidade da massa e de sua posição na trajetória. A equação fundamental, tomando o sentido para o centro como positivo, é:</p>
+                $$\sum F_r = \frac{m \cdot v^2}{r}$$
+                
+                <p><strong>Massa na posição mais baixa da trajetória:</strong><br>
+                Na posição inferior, a tração aponta para cima, em direção ao centro da circunferência, enquanto o peso aponta para baixo. Assim:</p>
+                $$T - m \cdot g = \frac{m \cdot v^2}{r} \implies T = \frac{m \cdot v^2}{r} + m \cdot g$$
+
+                <p><strong>Massa na posição mais alta da trajetória:</strong><br>
+                Na posição superior, tanto a tração quanto o peso apontam para o centro da trajetória. Portanto:</p>
+                $$T + m \cdot g = \frac{m \cdot v^2}{r} \implies T = \frac{m \cdot v^2}{r} - m \cdot g$$
+                <p>Essa expressão exige que a tração calculada seja não negativa para que o fio permaneça esticado. Se o resultado exigir tração negativa, o fio não consegue manter aquela trajetória circular nas condições consideradas.</p>
+
+                <h4 id="aplicacoes-haste">Aplicações dos cálculos à máquina</h4>
+                <ul>
+                    <li>Massa: $m = 0,02\text{ kg}$</li>
+                    <li>Raio: $r = 0,21\text{ m}$</li>
+                    <li>Velocidade tangencial: $v = 2\text{ m/s}$</li>
+                    <li>Gravidade: $g = 9,81\text{ m/s}^2$</li>
+                </ul>
+                <p>Primeiro, calculamos a força necessária para a resultante centrípeta:</p>
+                $$\frac{m \cdot v^2}{r} = \frac{0,02 \cdot 2^2}{0,21} \approx 0,381\text{ N}$$
+                <p>O peso da massa é:</p>
+                $$m \cdot g = 0,02 \cdot 9,81 = 0,1962\text{ N}$$
+                <p>Na posição inferior:</p>
+                $$T = 0,381 + 0,1962 = 0,5772\text{ N}$$
+                <p>Na posição superior:</p>
+                $$T = 0,381 - 0,1962 \approx 0,185\text{ N}$$
+                <p>Esses dois resultados são válidos se a velocidade for $2\text{ m/s}$ na posição específica considerada. Eles ilustram como a tração varia conforme a orientação do movimento em relação à gravidade.</p>
+
+                <h4 id="haste-experimento">A haste rígida do experimento</h4>
+                <p>Para uma massa presa a uma haste rígida, na posição inferior, a equação radial pode ser escrita como:</p>
+                $$F_{\text{haste}} - m \cdot g = \frac{m \cdot v^2}{r} \implies F_{\text{haste}} = \frac{m \cdot v^2}{r} + m \cdot g$$
+                <p>Esse resultado representa a componente radial da força exercida pela haste. Na posição superior, a componente radial do peso aponta para o centro, de modo que:</p>
+                $$F_{\text{haste}} = \frac{m \cdot v^2}{r} - m \cdot g$$
+                <p>Aqui, o sinal positivo representa uma força para dentro e o negativo, uma força para fora. Uma haste rígida pode transmitir ambas as direções de força, ao contrário de um fio ideal, que só pode puxar. A análise da tração ou da força exercida pela haste permite determinar a intensidade da força de vínculo necessária para manter a massa na trajetória circular.</p>
+            </article>
+
+            <article id="engrenagens">
+                <h3>Elementos de máquinas (engrenagens)</h3>
+                <p>As engrenagens são elementos mecânicos utilizados para transmitir movimento rotacional e torque entre eixos. Elas são encontradas em diversos equipamentos, como motores, geradores acionados mecanicamente, relógios, redutores, multiplicadores de velocidade e máquinas industriais.</p>
+                <p>Quando duas engrenagens com dentes compatíveis estão engrenadas, o contato entre seus dentes transmite movimento de uma para a outra. Em condições ideais, a relação entre suas velocidades de rotação depende de seus raios primitivos ou, de forma equivalente, do número de dentes.</p>
+                <p>Uma engrenagem maior, ao acionar uma menor, produz aumento da velocidade angular da engrenagem conduzida. Por outro lado, quando uma engrenagem menor aciona uma maior, ocorre redução da velocidade de rotação, acompanhada, idealmente, de aumento do torque disponível.</p>
+
+                <h4 id="descricao-engrenagens">Descrição do sistema de engrenagens do aparelho</h4>
+                <div class="img-placeholder">
+                    <img src="imagens/engrenagens_detalhe.png" alt="Conjunto de engrenagens e medição com paquímetro"><br>
+                    <code>Caminho da imagem: imagens/engrenagens_detalhe.png</code>
+                </div>
+                <p>O mecanismo é composto por três conjuntos funcionais:</p>
+                <ul>
+                    <li><strong>Engrenagem motriz:</strong> Raio = $24\text{ mm}$ (entrada do sistema).</li>
+                    <li><strong>Associação concêntrica:</strong> Engrenagem menor de raio $4,5\text{ mm}$ e Engrenagem maior de raio $22,5\text{ mm}$ (giram juntas no mesmo eixo).</li>
+                    <li><strong>Pinhão do motor/gerador:</strong> Raio = $1,5\text{ mm}$ (saída do trem de transmissão).</li>
+                </ul>
+
+                <h4 id="relacao-rotacoes">Relação matemática entre as rotações</h4>
+                <p>Para calcular as rotações, consideramos inicialmente engrenagens externas ideais, sem escorregamento. Quando duas engrenagens estão engrenadas, suas velocidades tangenciais no ponto de contato possuem o mesmo módulo:</p>
+                $$\omega_1 r_1 = \omega_2 r_2$$
+                <p>Como a velocidade angular é proporcional à frequência de rotação, podemos escrever:</p>
+                $$N_2 = N_1 \cdot \frac{r_1}{r_2}$$
+                <p>Em que $N_1$ e $N_2$ são as rotações da engrenagem motriz e conduzida, e $r_1, r_2$ são os respectivos raios primitivos.</p>
+
+                <h4 id="aplicacoes-engrenagens">Aplicações do cálculo na máquina</h4>
+                <h4 id="multiplicacao-rotacao">Primeiro estágio: engrenagem motriz para engrenagem menor</h4>
+                <p>Dados: $r_1 = 24\text{ mm}$, $r_2 = 4,5\text{ mm}$. A relação de transmissão é:</p>
+                $$i_1 = \frac{r_1}{r_2} = \frac{24}{4,5} \approx 5,33$$
+                <p>Assim, $N_2 \approx 5,33 \cdot N_1$.</p>
+
+                <h4 id="segundo-estagio">Segundo estágio: engrenagem maior para o pinhão</h4>
+                <p>Dados: $r_3 = 22,5\text{ mm}$, $r_4 = 1,5\text{ mm}$. A relação é:</p>
+                $$i_2 = \frac{22,5}{1,5} = 15$$
+                <p>Como a engrenagem maior gira com a mesma rotação da menor ($N_2$), a rotação final do pinhão é $N_3 = 15 \cdot N_2$.</p>
+
+                <h4 id="transmissao-total">Relação total de transmissão</h4>
+                <p>Multiplicando as duas relações:</p>
+                $$i_{\text{total}} = i_1 \cdot i_2 = \frac{24}{4,5} \cdot \frac{22,5}{1,5} = 80$$
+                <p>Para cada rotação completa da engrenagem motriz, o pinhão realiza teoricamente 80 rotações completas.</p>
+
+                <h4 id="rotacoes-frequencias">Cálculo das rotações e frequências</h4>
+                <p>A conversão entre rotação em rpm ($N$) e frequência mecânica em Hz ($f$) é dada por $f = N / 60$.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Posição do mecanismo</th>
+                            <th>Rotação</th>
+                            <th>Frequência mecânica</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Engrenagem motriz</td>
+                            <td>$N_1$</td>
+                            <td>$N_1 / 60$</td>
+                        </tr>
+                        <tr>
+                            <td>Engrenagem menor</td>
+                            <td>$5,333 N_1$</td>
+                            <td>$5,333 N_1 / 60$</td>
+                        </tr>
+                        <tr>
+                            <td>Engrenagem maior</td>
+                            <td>$5,333 N_1$</td>
+                            <td>$5,333 N_1 / 60$</td>
+                        </tr>
+                        <tr>
+                            <td>Pinhão do motor/gerador</td>
+                            <td>$80 N_1$</td>
+                            <td>$80 N_1 / 60$</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4 id="consequencias-mecanicas">Consequências mecânicas da multiplicação</h4>
+                <p>A potência rotacional é expressa por $P = \tau \cdot \omega$. Para uma transmissão ideal com relação $80:1$:</p>
+                $$\tau_{\text{saída}} = \frac{\tau_{\text{entrada}}}{80}$$
+                <p>Em um sistema real, o atrito reduz a potência transmitida, e o torque de resistência oferecido pelo gerador afeta a velocidade da engrenagem motriz.</p>
+            </article>
+
+            <article id="dinamica-gerador">
+                <h3>Dinâmica de máquinas (gerador)</h3>
+                <div class="img-placeholder">
+                    <img src="imagens/motor_rf300.png" alt="Motor RF-300C-11440"><br>
+                    <code>Caminho da imagem: imagens/motor_rf300.png</code>
+                </div>
+                <p>A dinâmica de máquinas analisa o movimento considerando forças, torques e perdas de energia. No aparato experimental, o movimento pendular faz com que a haste oscile, transmitindo energia mecânica ao conjunto de engrenagens para mover o eixo do pequeno motor de corrente contínua funcionando como gerador.</p>
+
+                <h4 id="motor-gerador">Características do motor-gerador RF-300C-11440</h4>
+                <p>O componente é um micromotor CC com escovas que funciona de maneira reversível. Quando acionado mecanicamente por uma fonte externa, produz tensão elétrica nos terminais. Especificações típicas da série RF-300 indicam tensões nominais entre $2\text{ V}$ e $3\text{ V}$ com rotação sem carga entre $2200\text{ rpm}$ e $3500\text{ rpm}$.</p>
+
+                <h4 id="relacoes-fisicas">Relações físicas aplicadas ao sistema</h4>
+                <h4 id="energia-potencial">1. Energia potencial gravitacional</h4>
+                $$E_p = m \cdot g \cdot \Delta h$$
+
+                <h4 id="transmissao-engrenagens">2. Transmissão por engrenagens</h4>
+                $$\omega_{\text{saída}} = 80 \cdot \omega_{\text{entrada}}$$
+
+                <h4 id="geracao-tensao">3. Geração de tensão elétrica</h4>
+                $$E = k_e \cdot \omega$$
+                <p>Em que $E$ é a força eletromotriz induzida e $k_e$ é a constante do motor.</p>
+
+                <h4 id="rotacao-frequencia">Rotação do pinhão e a frequência elétrica do gerador</h4>
+                <p>Em um gerador síncrono, a frequência elétrica $f_e$ relaciona-se com a rotação por:</p>
+                $$f_e = \frac{p \cdot N}{60}$$
+                <p>onde $p$ é o número de pares de polos.</p>
+
+                <h4 id="conclusao-mecanismo">Conclusão para a análise do mecanismo</h4>
+                <p>Como o movimento é pendular, a haste não gira indefinidamente, mas oscila. Mesmo com uma rotação parcial da engrenagem motriz, o pinhão realiza várias voltas devido à taxa de 80:1.</p>
+
+                <h4 id="haste-pinhao">Relação matemática entre a haste e o pinhão</h4>
+                <p>Para um ângulo $\theta$ (em graus) percorrido pela engrenagem motriz, o número de voltas do pinhão é:</p>
+                $$N_p = 80 \cdot \left(\frac{\theta}{360^\circ}\right) = \frac{2\theta}{9}$$
+
+                <h4 id="queda-angulos">Dividindo a queda em ângulos</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Ângulo percorrido pela motriz ($\theta$)</th>
+                            <th>Voltas da motriz</th>
+                            <th>Voltas do pinhão</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>$5^\circ$</td><td>0,0139</td><td>1,11</td></tr>
+                        <tr><td>$10^\circ$</td><td>0,0278</td><td>2,22</td></tr>
+                        <tr><td>$15^\circ$</td><td>0,0417</td><td>3,33</td></tr>
+                        <tr><td>$30^\circ$</td><td>0,0833</td><td>6,67</td></tr>
+                        <tr><td>$45^\circ$</td><td>0,1250</td><td>10,00</td></tr>
+                        <tr><td>$60^\circ$</td><td>0,1667</td><td>13,33</td></tr>
+                        <tr><td>$90^\circ$</td><td>0,2500</td><td>20,00</td></tr>
+                    </tbody>
+                </table>
+
+                <h4 id="angulo-maximo">Qual seria o ângulo máximo da queda?</h4>
+                <p>Para uma queda a partir da posição horizontal ($\theta = 90^\circ$) até a vertical inferior, a engrenagem motriz executa 0,25 voltas e o pinhão completa teoricamente 20 voltas.</p>
+
+                <h4 id="energia-hipotese">Energia potencial disponível nessa hipótese</h4>
+                $$\Delta E_p = m \cdot g \cdot L (1 - \cos\theta)$$
+                <p>Para $\theta = 90^\circ$, $m = 0,034\text{ kg}$ e $L = 0,216\text{ m}$:</p>
+                $$\Delta E_p = 0,034 \cdot 9,81 \cdot 0,216 \approx 0,0720\text{ J}$$
+            </article>
+
+            <article id="medicoes-eletricas">
+                <h3>Medições elétricas</h3>
+                <h4 id="multimetro">Instrumentação elétrica - Multímetro MXT YX-360TRn</h4>
+                <p>Para a medição da tensão elétrica produzida pelo motor-gerador RF-300C-11440, utiliza-se o multímetro analógico MXT YX-360TRn de ponteiro móvel na escala de $10\text{ V DCV}$. A opção por instrumentos analógicos simples justifica-se pelo caráter demonstrativo e qualitativo do protótipo experimental.</p>
+            </article>
+        </section>
+
+        <section id="coleta-dados">
+            <h2>Coleta e análise de dados</h2>
+            <div class="img-placeholder">
+                <img src="imagens/aparelho_medicao.png" alt="Aparelho de medição e protótipos em bancada"><br>
+                <code>Caminho da imagem: imagens/aparelho_medicao.png</code>
+            </div>
+
+            <article id="perdas-mecanicas">
+                <h3>Estimando as perdas de energia por resistências mecânicas</h3>
+                <p>Propõe-se um método comparativo entre o pêndulo acoplado à máquina e um pêndulo ideal de referência (com mesma haste e massa, mas sem o acoplamento das engrenagens e gerador).</p>
+
+                <h4 id="analise-perdas">Análise comparativa das perdas de energia</h4>
+                <h4 id="queda-maquina">Queda do peso no pêndulo da máquina</h4>
+                $$E_m = m \cdot g \cdot h_m = m \cdot g \cdot L \cdot (1 - \cos\theta_m)$$
+
+                <h4 id="queda-ideal">Queda do peso no pêndulo ideal</h4>
+                <div class="img-placeholder">
+                    <img src="imagens/pendulo_ideal.png" alt="Sequência de fotos do Pêndulo Ideal de Referência"><br>
+                    <code>Caminho da imagem: imagens/pendulo_ideal.png</code>
+                </div>
+                $$E_i = m \cdot g \cdot h_i = m \cdot g \cdot L \cdot (1 - \cos\theta_i)$$
+
+                <h4 id="comparacao-sistemas">Comparação dos dois sistemas</h4>
+                $$\Delta E = E_i - E_m = m \cdot g \cdot L \cdot [(1 - \cos\theta_i) - (1 - \cos\theta_m)]$$
+                <p>O indicador percentual de dissipação adicional é dado por:</p>
+                $$D(\%) = \left[ 1 - \frac{1 - \cos\theta_m}{1 - \cos\theta_i} \right] \times 100$$
+
+                <h4 id="interpretacao">Interpretação dos resultados</h4>
+                <ul>
+                    <li>$D = 0\%$: Os dois sistemas apresentam o mesmo alcance angular.</li>
+                    <li>$D > 0\%$: Menor alcance no pêndulo da máquina (presença de dissipação adicional).</li>
+                    <li>$D < 0\%$: Maior alcance na máquina (exige verificação das condições de teste).</li>
+                </ul>
+            </article>
+
+            <article id="moto-perpetuo">
+                <h3>Verificando a energia necessária para o moto-perpétuo</h3>
+                <h4 id="funcionamento-energetico">Funcionamento energético da máquina</h4>
+                <p>O processo transforma a energia potencial em cinética, acionando o gerador que produz uma tensão variável até parar momentaneamente no ponto de retorno.</p>
+
+                <h4 id="energia-mecanica">Identificação da energia mecânica necessária</h4>
+                <p>Calcula-se a energia necessária para completar uma revolução de $360^\circ$ a partir da energia potencial restante na altura máxima atingida.</p>
+
+                <h4 id="energia-gerada">Relação entre energia elétrica gerada e energia mecânica necessária</h4>
+                <p>Mede-se o balanço entre a energia potencial inicial, a energia mecânica útil, a geração elétrica e as perdas dissipativas.</p>
+
+                <h4 id="questao-moto-perpetuo">A questão do moto-perpétuo</h4>
+                <p>Em consonância com as Leis da Termodinâmica, a máquina demonstra experimentalmente que as dissipações e a ineficiência de conversão impedem a sustentação do movimento sem trabalho externo.</p>
+
+                <h4 id="dados-reais">Coletando dados reais para os cálculos na máquina</h4>
+                <div class="img-placeholder">
+                    <img src="imagens/pesagem_componentes.png" alt="Pesagem da haste, ruelas e componentes na balança de precisão"><br>
+                    <code>Caminho da imagem: imagens/pesagem_componentes.png</code>
+                </div>
+                <ul>
+                    <li>Massa unitária da ruela de metal: $3,45\text{ g}$</li>
+                    <li>Massa da haste de alumínio: $5,33\text{ g}$</li>
+                    <li>Massa do parafuso e porca borboleta: $5,06\text{ g}$</li>
+                    <li>Massa das duas ruelas de compressão: $2,58\text{ g}$</li>
+                    <li>Massa total do sistema de presilha: $7,64\text{ g}$</li>
+                </ul>
+
+                <h4 id="queda-18g">Observando a queda de aproximadamente 18 g na máquina</h4>
+                <div class="img-placeholder">
+                    <img src="imagens/fixacao_pesos.png" alt="Fixação dos pesos na haste"><br>
+                    <code>Caminho da imagem: imagens/fixacao_pesos.png</code>
+                </div>
+                <p>Para uma amostra de 3 ruelas ($10,35\text{ g}$), somando-se à presilha ($7,64\text{ g}$), obtém-se uma massa total de $17,99\text{ g} \approx 18\text{ g}$. Liberando da posição de $90^\circ$, observou-se um ângulo de retorno de aproximadamente $180^\circ + 60^\circ = 240^\circ$ e uma tensão máxima de $1,8\text{ V}$.</p>
+                <p>No pêndulo ideal, o ângulo de retorno equivalente alcançou $180^\circ + 90^\circ + 45^\circ = 315^\circ$.</p>
+            </article>
+
+            <article id="associacao-geradores">
+                <h3>Associações de geradores</h3>
+                <div class="img-placeholder">
+                    <img src="imagens/associacao_geradores.png" alt="Configuração com associação de três geradores por correia"><br>
+                    <code>Caminho da imagem: imagens/associacao_geradores.png</code>
+                </div>
+
+                <h4 id="geracao-eletrica">O que acontece com a geração elétrica?</h4>
+                <ul>
+                    <li><strong>Em série:</strong> As tensões individuais se somam (ex: $3 \times 2\text{ V} = 6\text{ V}$).</li>
+                    <li><strong>Em paralelo:</strong> Aumenta a capacidade total de corrente mantendo a tensão de $2\text{ V}$.</li>
+                </ul>
+
+                <h4 id="aspecto-experimento">Um aspecto importante para o experimento</h4>
+                <p>A associação de geradores não gera energia extra; o acoplamento de mais rotores aumenta o torque resistente no eixo, reduzindo a altura de alcance do pêndulo.</p>
+            </article>
+        </section>
+
+        <section id="contextualizacao">
+            <h2>Contextualização histórica e crítica</h2>
+            
+            <article id="maquina-joule">
+                <h3>A máquina de Joule</h3>
+                <div class="img-placeholder">
+                    <img src="imagens/joule_apparatus.png" alt="Desenho histórico do aparato experimental de Joule"><br>
+                    <code>Caminho da imagem: imagens/joule_apparatus.png</code>
+                </div>
+                <p>James Prescott Joule (1818-1889) demonstrou a equivalência entre trabalho mecânico e calor através do célebre experimento das pás rotativas em recipiente com água acionadas por pesos descendentes, estabelecendo que $1\text{ cal} \approx 4,186\text{ J}$.</p>
+
+                <h4 id="analise-joule">Análise crítica e relação com o projeto experimental</h4>
+                <div class="img-placeholder">
+                    <img src="imagens/joule_portrait_large.png" alt="James Prescott Joule"><br>
+                    <code>Caminho da imagem: imagens/joule_portrait_large.png</code>
+                </div>
+                <p>Enquanto Joule relacionou energia mecânica e térmica, o experimento presente estabelece o ciclo entre energia potencial gravitacional, energia mecânica rotacional, energia elétrica e dissipações associadas.</p>
+            </article>
+
+            <article id="fake-physics">
+                <h3>Fake physics</h3>
+                <p>Analisa-se criticamente o surgimento de conteúdos em mídias digitais que prometem fontes infinitas de energia e "moto-perpétuos" manipulados visualmente, reforçando o valor do método científico rigoroso na desmistificação de tais conteúdos.</p>
+            </article>
+
+            <article id="tecnologias-atuais">
+                <h3>Procurando soluções em tecnologias atuais</h3>
+                <p>Explora-se o conceito de <em>Energy Harvesting</em> (captação de energia ambiental: solar, eólica, piezoelétrica) para compensar as perdas energéticas do sistema sem violar o princípio de conservação.</p>
+            </article>
+        </section>
+
+        <section id="conclusao">
+            <h2>Conclusão</h2>
+            <div class="img-placeholder">
+                <img src="imagens/maquina_final.png" alt="Visão completa da máquina montada no painel"><br>
+                <code>Caminho da imagem: imagens/maquina_final.png</code>
+            </div>
+            <p>O desenvolvimento deste estudo permitiu investigar a conversão, a transmissão e o aproveitamento da energia em um sistema eletromecânico pendular. A comparação entre o pêndulo acoplado e o de referência permitiu mensurar a taxa de dissipação adicional pelas resistências mecânicas e magnéticas.</p>
+            <p>O trabalho conclui reafirmando que o moto-perpétuo permanece irrealizável, e destaca a importância da máquina como excelente ferramenta pedagógica e experimental para o ensino de Física e Engenharia.</p>
+        </section>
+
+        <footer class="rodape">
+            <p>© PET Física IFRN-CNAT — Estudo Contemporâneo dos Pêndulos</p>
+        </footer>
+    </main>
+
 </body>
 </html>

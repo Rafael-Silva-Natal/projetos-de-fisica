@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    @charset "UTF-8";
+
+:root {
+  --cor-texto: #242424;
+  --cor-secundaria: #626262;
+  --cor-destaque: #243b53;
+  --cor-linha: #d9dee5;
+  --fundo: #f3f5f7;
+  --papel: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 36px 18px;
+  background: var(--fundo);
+  color: var(--cor-texto);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.55;
+}
+
+.pagina {
+  width: min(900px, 100%);
+  margin: 0 auto;
+  padding: 56px 68px;
+  background: var(--papel);
+  border: 1px solid var(--cor-linha);
+  box-shadow: 0 8px 28px rgba(20, 35, 50, 0.07);
+}
+
+.cabecalho {
+  margin-bottom: 34px;
+  padding-bottom: 24px;
+  text-align: center;
+  border-bottom: 2px solid var(--cor-destaque);
+}
+
+.identificacao {
+  margin: 0 0 8px;
+  color: var(--cor-secundaria);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+}
+
+h1 {
+  margin: 0;
+  color: var(--cor-destaque);
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.subtitulo {
+  margin: 9px 0 0;
+  color: var(--cor-secundaria);
+  font-size: 0.96rem;
+  font-style: italic;
+}
+
+.sumario {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.sumario ol {
+  margin-top: 7px;
+  margin-bottom: 7px;
+  padding-left: 28px;
+}
+
+.lista-principal {
+  padding-left: 30px;
+}
+
+.sumario li {
+  padding: 3px 0 3px 4px;
+  color: var(--cor-texto);
+}
+
+.sumario > .lista-principal > li {
+  margin: 10px 0;
+  font-size: 1.02rem;
+}
+
+.sumario > .lista-principal > li > ol {
+  margin-top: 8px;
+}
+
+.sumario a {
+  color: inherit;
+  text-decoration: none;
+  text-underline-offset: 3px;
+  transition: color 0.15s ease;
+}
+
+.sumario a:hover {
+  color: var(--cor-destaque);
+  text-decoration: underline;
+}
+
+.sumario > .lista-principal > li > a {
+  font-weight: 700;
+}
+
+.sumario > .lista-principal > li > ol > li > a {
+  font-weight: 600;
+}
+
+.sumario ol ol {
+  font-size: 0.96rem;
+}
+
+.sumario ol ol ol {
+  color: #454545;
+  font-size: 0.93rem;
+}
+
+.rodape {
+  margin-top: 36px;
+  padding-top: 14px;
+  border-top: 1px solid var(--cor-linha);
+  color: var(--cor-secundaria);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.78rem;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: 0;
+    background: var(--papel);
+  }
+
+  .pagina {
+    padding: 32px 22px;
+    border: 0;
+    box-shadow: none;
+  }
+
+  h1 {
+    font-size: 1.65rem;
+  }
+
+  .sumario ol {
+    padding-left: 22px;
+  }
+
+  .lista-principal {
+    padding-left: 24px;
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 2cm;
+  }
+
+  body {
+    padding: 0;
+    background: #fff;
+    font-size: 10.5pt;
+  }
+
+  .pagina {
+    width: 100%;
+    padding: 0;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .sumario a {
+    color: #000;
+  }
+
+  .sumario li {
+    break-inside: avoid;
+  }
+
+  .rodape {
+    color: #555;
+  }
+}
+
+</style>
+
+
+
+<style>
+    .img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+.introdução1 {
+    text-align: justify;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(0, 0, 0);
+
+    text-indent: 2em;
+    margin: 20px;
+}
+
+.introdução {
+    text-align: justify;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(0, 0, 0);
+
+    text-indent: 2em;
+    margin: 20px;
+}
+
+.introdução3 {
+    text-align: center;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(0, 0, 0);
+    
+}
+
+</style>
+<body>
+    
+       
+    <div class="img">
+     <img src="imagens/cabeçalho.png" alt="Cabeçalho IFRN">
+</div>
+<br>
+ <br>
+ <p class="introdução3">
+       Tutor responsável:  <br><br>
+       Prof. Dr. Melquisedec Lourenço da Silva 
+    </p>
+    <p class="introdução3">
+Discentes: <br><br>
+
+Rafael Bruno da Silva 
+<br><br>
+Igor Vitorino da Luz
+
+</p>
+ <br>
+ <br>
+      
+  <main class="pagina">
+    <header class="cabecalho">
+      <p class="identificacao">ESTUDO EXPERIMENTAL</p>
+      <h1>Sumário</h1>
+      <p class="subtitulo">Análise física, matemática e energética do mecanismo</p>
+    </header>
+
+    <nav class="sumario" aria-label="Sumário do trabalho">
+      <ol class="lista-principal">
+        <li><a href="#introducao">Introdução</a></li>
+        <li><a href="#tema">Tema</a></li>
+        <li><a href="#teoria">Fundamentação teórica</a></li>
+        <li><a href="#maquina">Apresentação da máquina</a></li>
+
+        <li>
+          <a href="#conceitos">Conceitos matemáticos e físicos aplicados</a>
+          <ol>
+            <li>
+              <a href="#segunda-lei">Segunda Lei de Newton</a>
+              <ol>
+                <li><a href="#direcao-radial">Direção radial</a></li>
+                <li><a href="#direcao-tangencial">Direção tangencial</a></li>
+                <li><a href="#forca-gravitacional">Força gravitacional</a></li>
+                <li><a href="#aceleracao-angular">Aceleração angular</a></li>
+                <li><a href="#forca-radial">Força radial</a></li>
+                <li><a href="#aplicacoes-newton">Aplicações dos cálculos à máquina</a></li>
+                <li><a href="#aceleracao-centripeta">Cálculo da aceleração centrípeta</a></li>
+                <li><a href="#forca-resultante">Cálculo da força resultante centrípeta</a></li>
+              </ol>
+            </li>
+            <li>
+              <a href="#queda-corpo">Queda de um corpo em movimento circular, preso a uma haste rígida</a>
+              <ol>
+                <li><a href="#centro-massa">Centro de massa do conjunto</a></li>
+                <li><a href="#momento-inercia">Momento de inércia da haste e das massas acopladas</a></li>
+                <li><a href="#torque">Torque ou momento de força</a></li>
+                <li><a href="#conservacao-energia">Conservação da energia mecânica</a></li>
+                <li><a href="#velocidades">Velocidades angular e linear</a></li>
+                <li><a href="#tracao">Tração em corpos presos a uma haste rígida</a></li>
+                <li><a href="#calculo-tracao">Cálculo da tração durante o movimento circular</a></li>
+                <li><a href="#aplicacoes-haste">Aplicações dos cálculos à máquina</a></li>
+                <li><a href="#haste-experimento">A haste rígida do experimento</a></li>
+              </ol>
+            </li>
+            <li>
+              <a href="#engrenagens">Elementos de máquinas: engrenagens</a>
+              <ol>
+                <li><a href="#descricao-engrenagens">Descrição do sistema de engrenagens do aparelho</a></li>
+                <li><a href="#relacao-rotacoes">Relação matemática entre as rotações</a></li>
+                <li><a href="#aplicacoes-engrenagens">Aplicações dos cálculos à máquina</a></li>
+                <li><a href="#multiplicacao-rotacao">Cálculo da multiplicação de rotação em cada estágio</a></li>
+                <li><a href="#segundo-estagio">Segundo estágio: engrenagem maior e pinhão</a></li>
+                <li><a href="#transmissao-total">Relação total de transmissão</a></li>
+                <li><a href="#rotacoes-frequencias">Cálculo das rotações e frequências</a></li>
+                <li><a href="#consequencias-mecanicas">Consequências mecânicas da multiplicação de rotação</a></li>
+              </ol>
+            </li>
+            <li>
+              <a href="#dinamica-gerador">Dinâmica de máquinas: gerador elétrico</a>
+              <ol>
+                <li><a href="#motor-gerador">Características do motor-gerador RF-300C-11440</a></li>
+                <li><a href="#relacoes-fisicas">Relações físicas aplicadas ao sistema</a></li>
+                <li><a href="#energia-potencial">Energia potencial gravitacional</a></li>
+                <li><a href="#transmissao-engrenagens">Transmissão por engrenagens</a></li>
+                <li><a href="#geracao-tensao">Geração de tensão elétrica</a></li>
+                <li><a href="#rotacao-frequencia">Rotação do pinhão e frequência elétrica do gerador</a></li>
+                <li><a href="#conclusao-mecanismo">Síntese da análise do mecanismo</a></li>
+                <li><a href="#haste-pinhao">Relação matemática entre a haste e o pinhão</a></li>
+                <li><a href="#queda-angulos">Análise da queda em intervalos angulares</a></li>
+                <li><a href="#angulo-maximo">Determinação do ângulo máximo de queda</a></li>
+                <li><a href="#energia-hipotese">Energia potencial disponível nessa hipótese</a></li>
+              </ol>
+            </li>
+            <li>
+              <a href="#medicoes-eletricas">Medições elétricas</a>
+              <ol>
+                <li><a href="#multimetro">Instrumentação elétrica: multímetro MXT YX-360TRn</a></li>
+              </ol>
+            </li>
+          </ol>
+        </li>
+
+        <li>
+          <a href="#coleta-dados">Coleta e análise de dados</a>
+          <ol>
+            <li>
+              <a href="#perdas-mecanicas">Estimativa das perdas de energia por resistências mecânicas</a>
+              <ol>
+                <li><a href="#analise-perdas">Análise comparativa das perdas por resistências mecânicas</a></li>
+                <li><a href="#queda-maquina">Queda do peso no pêndulo da máquina</a></li>
+                <li><a href="#queda-ideal">Queda do peso no pêndulo ideal</a></li>
+                <li><a href="#comparacao-sistemas">Comparação entre os dois sistemas</a></li>
+                <li><a href="#interpretacao">Interpretação dos resultados</a></li>
+              </ol>
+            </li>
+            <li>
+              <a href="#moto-perpetuo">Verificação da energia necessária ao funcionamento em ciclo contínuo</a>
+              <ol>
+                <li><a href="#funcionamento-energetico">Funcionamento energético da máquina</a></li>
+                <li><a href="#energia-mecanica">Identificação da energia mecânica necessária</a></li>
+                <li><a href="#energia-gerada">Relação entre a energia elétrica gerada e a energia mecânica necessária</a></li>
+                <li><a href="#questao-moto-perpetuo">A questão do moto-perpétuo</a></li>
+                <li><a href="#dados-reais">Coleta de dados reais para os cálculos da máquina</a></li>
+                <li><a href="#queda-18g">Análise da queda de aproximadamente 18 g na máquina</a></li>
+              </ol>
+            </li>
+            <li>
+              <a href="#associacao-geradores">Associação de geradores</a>
+              <ol>
+                <li><a href="#geracao-eletrica">Efeitos da associação sobre a geração elétrica</a></li>
+                <li><a href="#aspecto-experimento">Um aspecto relevante para o experimento</a></li>
+              </ol>
+            </li>
+          </ol>
+        </li>
+
+        <li>
+          <a href="#contextualizacao">Contextualização histórica e crítica</a>
+          <ol>
+            <li>
+              <a href="#maquina-joule">A máquina de Joule</a>
+              <ol>
+                <li><a href="#analise-joule">Análise crítica e relações com o projeto experimental</a></li>
+              </ol>
+            </li>
+            <li><a href="#fake-physics">Desinformação científica: o fenômeno da “fake physics”</a></li>
+            <li><a href="#tecnologias-atuais">Busca por soluções em tecnologias atuais</a></li>
+          </ol>
+        </li>
+        <li><a href="#conclusao">Conclusão</a></li>
+      </ol>
+    </nav>
+
+ <br><br>
+<div class="img">
+     <img src="imagens/baner.jpg" alt="Cabeçalho IFRN">
+</div>
+<br>
+ <br>
+ <br>
+ <br>
+ <p class="introdução1">
+Introdução 
+ </p>
+ <p class="introdução">
+A busca pelo movimento perpétuo e pela geração ilimitada de energia transcendeu séculos de história da ciência, saltando dos aparatos conceituais do século XIX para o ecossistema digital contemporâneo, onde a proliferação de vídeos virais e fake physics frequentemente distorce leis fundamentais da natureza em troca de engajamento.
+</p>
+<p class="introdução">
+Este trabalho contrapõe a desinformação científica e oferece uma ferramenta físico-didática para investigação da possibilidade de criação de um motor-perpétuo, permitindo coletas de dados e pesquisas com tecnologias atuais para a solução do problema. Por meio de uma análise experimental e rigorosa do comportamento de queda de pesos em pêndulo acoplados à geradores, apresenta as equações correspondentes à dinâmica do experimento utilizando o método científico para quantificar o rendimento energético real de um sistema mecânico, ao passo que contextualiza com as razões históricas da impossibilidade do movimento perpétuo.
+</p>
+<p class="introdução">
+Trata-se, portanto, de uma investigação prática que não apenas reafirma a beleza e a firmeza da física clássica, mas se consolida como uma ferramenta pedagógica viva no combate às pseudociências da era digital. Permitindo que verdadeiros estudantes busquem soluções reais através de ferramentas reais. 
+ </p>
+</body>
+</html>
