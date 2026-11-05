@@ -161,6 +161,20 @@
           padding: 4px;
         }
 
+.img3 {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          margin: 25px 0;
+        }
+
+        .img3 img {
+          max-width: 90%;
+          height: auto;
+          
+          padding: 4px;
+        }
 
 
 
@@ -531,19 +545,39 @@
                 
             </div>
             <p>O corpo da máquina tem como base uma plataforma feita de madeira MDF, composta basicamente por três recortes de madeira encaixados de forma que dois recortes servem de equilíbrio (pés) do recorte de madeira que servirá de plano para a montagem do sistema pendular.</p>
-            <p>O sistema pendular é composto basicamente por uma haste de $20,6\text{ cm}$, com uma extremidade contendo um parafuso que serve de presilha para pesos de metal, e na outra extremidade, a haste é conectada a um eixo que possui a engrenagem que funciona como motriz do sistema, e possui um raio de $24\text{ mm}$. Concêntrico ao eixo do pêndulo também temos um transferidor centralizado e alinhado para medida de ângulos. Considera-se essa perspectiva como sendo a parte frontal da máquina.</p>
-            <p>Na associação de engrenagens; conectada em série à engrenagem motriz, temos a engrenagem multiplicadora, composta de duas engrenagens de raios $22,5\text{ mm}$ e $4,5\text{ mm}$ respectivamente, paralelas e concêntricas. Em série com a engrenagem multiplicadora temos a engrenagem do pinhão de $1,5\text{ mm}$ de raio, que serve para a rotação do eixo de um pequeno motor de driver RF-300C-11440 na configuração de gerador.</p>
+            <div class="img2">
+                <img src="imagens/base.jpg" alt="Vistas da Máquina" width="20%"><br> 
+            </div>
             
-            <div class="img-placeholder">
-                <img src="imagens/motor_gerador.png" alt="Motor-Gerador RF-300C e Detalhe do Transferidor"><br>
-                <code>Caminho da imagem: imagens/motor_gerador.png</code>
+            <p>O sistema pendular é composto basicamente por uma haste de 20,6 cm, com 
+uma extremidade contendo um parafuso que serve de presilha para pesos de metal, e 
+na outra extremidade, a haste é conectada a um eixo, que possui a engrenagem que 
+funciona como motriz do sistema, e possui um raio de 24 mm. Concêntrico ao eixo do 
+pêndulo também temos um transferidor centralizado e alinhado para medida de 
+ângulos. Considera-se essa perspectiva como sendo a parte frontal da máquina. </p>
+
+<div class="img2">
+                <img src="imagens/imagem tecnica dos pendulos.png" alt="Vistas da Máquina" width="100%"><br> 
             </div>
-            <div class="img-placeholder">
-                <img src="imagens/maquina_traseira.png" alt="Parte traseira da máquina e conexões"><br>
-                <code>Caminho da imagem: imagens/maquina_traseira.png</code>
+            <p>Na associação de engrenagens; conectada em série a engrenagem motriz, temos 
+a engrenagem multiplicadora, composta de duas engrenagens de raios 22,5 mm e 4,5 
+mm respectivamente, paralelas e concêntricas. Em série com a engrenagem 
+multiplicadora temos a engrenagem do pinhão de 1,5 mm de raio, que serve para a 
+rotação do eixo de um pequeno motor de driver RF-300C-11440 na configuração de 
+gerador.</p>
+            <div class="img2">
+                <img src="imagens/gerador .png" alt="Vistas da Máquina" width="100%"><br> 
             </div>
-            <p>Na parte de trás da máquina pode ser observada apenas a furação de encaixe do motor-gerador, e seus respectivos polos soldados a um conector de áudio tipo borne de pressão para amplificadores, servindo de saídas elétricas do gerador, com a finalidade de conectar as agulhas dos medidores elétricos.</p>
-        </section>
+            <p>
+              Na parte de trás da máquina pode ser observada apenas a furação de encaixe do 
+motor-gerador, e seus respectivos polos soldados a um conector de áudio tipo borne de 
+pressão para amplificadores, servindo de saídas elétricas do gerador, tem a finalidade 
+de conectar as agulhas dos medidores elétricos.
+            </p>
+           <div class="img2">
+                <img src="imagens/verso.jpg" alt="Vistas da Máquina" width="20%"><br> 
+            </div>
+          </section>
 
         <section id="conceitos">
             <h2>Conceitos matemáticos e físicos aplicados</h2>
@@ -552,44 +586,65 @@
                 <h3>Segunda Lei de Newton</h3>
                 <p>A Segunda Lei de Newton estabelece que a aceleração de um corpo é determinada pela força resultante que atua sobre ele e por sua massa. Em termos físicos, uma força resultante maior produz maior aceleração para uma mesma massa, enquanto um corpo de maior massa exige uma força maior para alcançar a mesma aceleração.</p>
                 <p>Essa lei é expressa matematicamente pela relação entre força resultante, massa e aceleração:</p>
-                $$\sum \vec{F} = m \cdot \vec{a}$$
-                <p>Em que:</p>
-                <ul>
-                    <li>$\vec{F}$ é a força resultante, medida em newtons ($\text{N}$).</li>
-                    <li>$m$ é a massa do corpo, medida em quilogramas ($\text{kg}$).</li>
-                    <li>$\vec{a}$ é a aceleração do corpo, em metros por segundo ao quadrado ($\text{m/s}^2$).</li>
-                </ul>
-                <p>No caso de uma massa em movimento circular, mesmo que sua velocidade escalar permaneça constante, sua direção muda continuamente. Por isso, existe uma aceleração direcionada para o centro da trajetória, chamada aceleração centrípeta.</p>
-                <p>Quando uma massa está presa a uma haste rígida e se movimenta em uma trajetória circular, a haste restringe seu movimento a uma distância aproximadamente constante em relação ao eixo de rotação. Nesse caso, é necessário analisar as forças em duas direções distintas:</p>
+                 <div class="img3">
+                <img src="imagens/calc1.png" alt="Vistas da Máquina" width="100%"><br> 
+            </div>
+                <p>
+                  No caso de uma massa em movimento circular, mesmo que sua velocidade 
+escalar permaneça constante, sua direção muda continuamente. Por isso, existe uma 
+aceleração direcionada para o centro da trajetória, chamada aceleração centrípeta. 
+                </p>
 
+            <p>
+Quando uma massa está presa a uma haste rígida e se movimenta em uma 
+trajetória circular, a haste restringe seu movimento a uma distância aproximadamente 
+constante em relação ao eixo de rotação. Nesse caso, é necessário analisar as forças 
+em duas direções distintas: 
+
+            </p>
+               
                 <h4 id="direcao-radial">A) Direção radial</h4>
-                <p>É a direção que aponta para o centro da trajetória circular. A componente radial da força resultante produz a aceleração centrípeta, responsável pela mudança contínua da direção da velocidade.</p>
-
+          
+                <p>
+  É a direção que aponta para o centro da trajetória circular. A componente radial 
+da força resultante produz a aceleração centrípeta, responsável pela mudança contínua 
+da direção da velocidade.
+</p>
                 <h4 id="direcao-tangencial">B) Direção tangencial</h4>
-                <p>É a direção tangente à trajetória. A componente tangencial da força resultante altera o módulo da velocidade da massa, fazendo-a acelerar ou desacelerar.</p>
+                <p>
+É a direção tangente à trajetória. A componente tangencial da força resultante 
+altera o módulo da velocidade da massa, fazendo-a acelerar ou desacelerar. 
+                </p>
 
-                <p>Essas duas componentes são importantes porque, durante uma queda ao longo de uma trajetória circular, a massa pode apresentar simultaneamente aceleração centrípeta e aceleração tangencial.</p>
+                <p>Essas duas componentes são importantes porque, durante uma queda ao longo 
+de uma trajetória circular, a massa pode apresentar simultaneamente aceleração 
+centrípeta e aceleração tangencial. </p>
+                
+                
                 <p>A aceleração centrípeta é dada por:</p>
-                $$a_c = \frac{v^2}{r}$$
-                <p>Em que:</p>
-                <ul>
-                    <li>$a_c$ é a aceleração centrípeta ($\text{m/s}^2$);</li>
-                    <li>$v$ é a velocidade tangencial da massa ($\text{m/s}$);</li>
-                    <li>$r$ é o raio da trajetória circular ($\text{m}$).</li>
-                </ul>
+
+                 <div class="img3">
+                <img src="imagens/calc2.png" alt="Vistas da Máquina" width="100%"><br> 
+            </div>
+               
 
                 <p>Aplicando a Segunda Lei de Newton na direção radial, obtemos:</p>
                 $$\sum F_r = m \frac{v^2}{r}$$
-                <p>Essa expressão indica que a força resultante dirigida para o centro depende da massa, do quadrado da velocidade e do raio da trajetória.</p>
-                <p>Considere uma massa $m$ presa à extremidade de uma haste de comprimento $r$, articulada em um eixo fixo. Quando a massa é liberada de uma posição inclinada, a gravidade pode fazê-la descer descrevendo um arco de circunferência.</p>
+                <p>Essa expressão indica que a força resultante dirigida para o 
+                  centro depende da massa, do quadrado da velocidade e do raio da trajetória.</p>
+                <p>Considere uma massa m presa à extremidade de uma 
+                  haste de comprimento r, articulada em um eixo fixo. 
+                  Quando a massa é liberada de uma posição inclinada, 
+                  a gravidade pode fazê-la descer descrevendo um arco de circunferência.</p>
                 <ul>
-                    <li>A haste é rígida e possui massa desprezível;</li>
-                    <li>O eixo de rotação é fixo;</li>
-                    <li>A massa está concentrada em um ponto;</li>
-                    <li>A resistência do ar e o atrito no eixo são desprezíveis;</li>
-                    <li>O campo gravitacional é uniforme, com $g \approx 9,81\text{ m/s}^2$.</li>
+
+                  <div class="img3">
+                <img src="imagens/calc3.png" alt="Vistas da Máquina" width="100%"><br> 
+            </div>
                 </ul>
-                <p>Definindo $\theta$ como o ângulo entre a haste e a vertical para baixo, podemos estudar o movimento por meio de três relações.</p>
+<div class="img3">
+                <img src="imagens/calc4.png" alt="Vistas da Máquina" width="100%"><br> 
+            </div>
 
                 <h4 id="forca-gravitacional">Força gravitacional</h4>
                 <p>O peso da massa é dado por:</p>
@@ -601,10 +656,17 @@
                 <p>Essa relação mostra que a aceleração tangencial depende da inclinação da haste em relação à vertical, e não da massa do corpo.</p>
 
                 <h4 id="aceleracao-angular">Aceleração angular</h4>
-                <p>Como a massa percorre um arco de raio $r$, a aceleração tangencial também pode ser escrita como:</p>
+                <p>Como a massa percorre um arco de raio r, a aceleração tangencial também pode ser escrita como:</p>
                 $$a_t = r \cdot \alpha$$
-                <p>Em que $\alpha$ representa a aceleração angular, medida em radianos por segundo ao quadrado. Substituindo na equação anterior:</p>
+                
+                <div class="img3">
+                <img src="imagens/calc5.png" alt="Vistas da Máquina" width="100%"><br> 
+            </div>
+                
+
                 $$m \cdot r \cdot \alpha = m \cdot g \cdot \sin\theta$$
+                
+                
                 <p>Logo:</p>
                 $$\alpha = \frac{g}{r} \sin\theta$$
                 <p>Essa equação descreve como a gravidade produz aceleração angular durante o movimento da haste.</p>
@@ -612,14 +674,19 @@
                 <h4 id="forca-radial">Força radial</h4>
                 <p>A força radial resultante é responsável por manter a massa na trajetória circular:</p>
                 $$\sum F_r = m \frac{v^2}{r}$$
-                <p>Para o modelo descrito, adotando o sentido radial para dentro como positivo, a componente radial do peso é $m \cdot g \cdot \cos\theta$. Se $F_{\text{haste},r}$ representa a componente radial da força exercida pela haste sobre a massa, então:</p>
+                
+                 <div class="img3">
+                <img src="imagens/calc6.png" alt="Vistas da Máquina" width="100%"><br> 
+            </div>
+                
                 $$F_{\text{haste},r} - m \cdot g \cdot \cos\theta = m \frac{v^2}{r}$$
                 <p>Assim:</p>
                 $$F_{\text{haste},r} = m \frac{v^2}{r} + m \cdot g \cdot \cos\theta$$
                 <p>O sinal da força exercida pela haste indica sua direção: ela pode atuar para fora ou para dentro, conforme as condições do movimento. Diferentemente de um fio flexível, uma haste rígida pode exercer tração ou compressão.</p>
 
-                <h4 id="aplicacoes-newton">Aplicações dos cálculos à máquina</h4>
-                <p>Considerando uma massa de $0,02\text{ kg}$, presa a uma haste de $0,21\text{ m}$, que passa por um ponto da trajetória com velocidade tangencial de $2\text{ m/s}$.</p>
+                <h4 id="aplicacoes-newton">Aplicações dos cálculos na máquina</h4>
+                <p>Considerando uma massa de 0,02 kg, presa a uma haste de 0,21 m, que passa por um 
+                  ponto da trajetória com velocidade tangencial de 2 m/s.</p>
                 
                 <h4 id="aceleracao-centripeta">Cálculo da aceleração centrípeta</h4>
                 <p>Utilizamos a fórmula e substituindo os valores:</p>
@@ -628,31 +695,79 @@
                 <h4 id="forca-resultante">Cálculo da força resultante centrípeta</h4>
                 <p>Aplicando a Segunda Lei de Newton na direção radial e substituindo os valores:</p>
                 $$F_r = m \cdot a_c = 0,02 \cdot 19,05 \approx 0,381\text{ N}$$
-                <p><strong>Interpretação física:</strong> para uma massa de 20 gramas que percorre uma trajetória circular de raio 21 centímetros a uma velocidade tangencial de $2\text{ m/s}$, a resultante das forças na direção radial deve ter módulo aproximado de $0,381\text{ N}$, orientada para o centro da trajetória.</p>
-                <p>Esse valor corresponde à força resultante radial, e não necessariamente à força exercida exclusivamente pela haste. Para calcular a força da haste, seria necessário conhecer também a posição angular da massa e considerar a componente radial da gravidade.</p>
+                
+                <p><strong>Interpretação física:</strong> para uma massa de 20 gramas 
+                  que percorre uma trajetória circular de raio 21 centímetros a 
+                  uma velocidade tangencial de 2 m/s, a resultante das 
+                  forças na direção radial deve ter módulo aproximado 
+                  de 0,381 N, orientada para o centro da trajetória.</p>
+               
+               
+                <p>Esse valor corresponde à força resultante radial, 
+                  e não necessariamente à força exercida exclusivamente 
+                  pela haste. Para calcular a força da haste, seria necessário 
+                  conhecer também a posição angular da massa e considerar 
+                  a componente radial da gravidade.</p>
             </article>
 
             <article id="queda-corpo">
                 <h3>Queda de um corpo em movimento circular preso a uma haste rígida</h3>
-                <p>A aceleração centrípeta e a força resultante radial nesta análise nos permitem ampliar o estudo para outras propriedades mecânicas do sistema. O objetivo é estudar como a distribuição de massa, a geometria da haste, a energia e as restrições do movimento influenciam a queda dos corpos.</p>
+                <p>A aceleração centrípeta e a força resultante radial nesta análise 
+                  nos permitem ampliar o estudo para outras propriedades mecânicas 
+                  do sistema. O objetivo é estudar como a distribuição de massa, 
+                  a geometria da haste, a energia e as restrições do 
+                  movimento influenciam a queda dos corpos.</p>
 
                 <h4 id="centro-massa">Centro de massa do conjunto</h4>
-                <p>O centro de massa representa a posição média da distribuição de massa de um sistema. Em um mecanismo formado por uma haste rígida e uma ou mais massas acopladas a ela, sua posição depende tanto da massa da haste quanto da posição e da massa dos corpos presos a ela. Para um sistema de corpos discretos, a posição do centro de massa é calculada por:</p>
+                <p>O centro de massa representa a posição média da 
+                  distribuição de massa de um sistema. Em um mecanismo 
+                  formado por uma haste rígida e uma ou mais massas 
+                  acopladas a ela, sua posição depende tanto da massa 
+                  da haste quanto da posição e da massa dos corpos presos a ela. 
+                  Para um sistema de corpos discretos, a posição 
+                  do centro de massa é calculada por:</p>
+                
                 $$x_{CM} = \frac{\sum_i m_i x_i}{\sum_i m_i}$$
-                <p>De forma semelhante, podem ser calculadas as coordenadas $y_{CM}$ e $z_{CM}$, conforme a geometria do sistema. Para uma haste uniforme de comprimento $L$, massa $M_h$ e uma massa pontual $m$ localizada a uma distância $d$ de uma extremidade, temos:</p>
+                
+                <p>De forma semelhante, podem ser calculadas as coordenadas Y CM e Z CM, 
+                  conforme a geometria do sistema. Para uma haste uniforme de 
+                  comprimento L, massa Mh e uma massa pontual m localizada 
+                  a uma distância d de uma extremidade, temos:</p>
+                
                 $$x_{CM} = \frac{M_h (L/2) + m \cdot d}{M_h + m}$$
-                <p>Essa expressão considera a extremidade usada como origem das coordenadas. O centro de massa da haste uniforme, isoladamente, encontra-se no seu ponto médio, mas a massa acoplada desloca o centro de massa do conjunto. Conhecer o centro de massa ajuda a identificar como a distribuição de peso influencia o equilíbrio, o torque gravitacional e a resposta dinâmica do mecanismo durante a queda.</p>
+                
+                <p>Essa expressão considera a extremidade usada como 
+                  origem das coordenadas. O centro de massa da haste uniforme, 
+                  isoladamente, encontra-se no seu ponto médio, 
+                  mas a massa acoplada desloca o centro de massa do conjunto. 
+                  Conhecer o centro de massa ajuda a identificar como a 
+                  distribuição de peso influencia o equilíbrio, 
+                  o torque gravitacional e a resposta dinâmica do mecanismo durante a queda.</p>
 
                 <h4 id="momento-inercia">Momento de inércia da haste e das massas acopladas</h4>
-                <p>O momento de inércia mede a resistência de um corpo à alteração de seu movimento de rotação. Ele depende da quantidade de massa e de como essa massa está distribuída em relação ao eixo de rotação. Para uma haste uniforme, de massa $M_h$ e comprimento $L$, articulada em uma extremidade:</p>
+                <p>O momento de inércia mede a resistência de um corpo à 
+                  alteração de seu movimento de rotação. Ele depende da 
+                  quantidade de massa e de como essa massa está distribuída 
+                  em relação ao eixo de rotação. Para uma haste uniforme, 
+                  de massa M h e comprimento L, articulada em uma extremidade:</p>
                 $$I_h = \frac{1}{3} M_h \cdot L^2$$
-                <p>Para uma massa pontual $m$, localizada a uma distância $r$ do eixo:</p>
+                <p>Para uma massa pontual m, localizada a uma distância r do eixo:</p>
                 $$I_m = m \cdot r^2$$
                 <p>Assim, para uma haste com uma massa pontual acoplada:</p>
                 $$I_{\text{total}} = \frac{1}{3} M_h L^2 + m \cdot r^2$$
-                <p>Essa relação permite investigar como a posição de uma massa na haste modifica a resistência à rotação. Para a mesma massa, quanto maior a distância ao eixo, maior será sua contribuição para o momento de inércia. A expressão pressupõe que a haste gira em torno de uma extremidade fixa e que a massa acoplada pode ser aproximada por um ponto material.</p>
+                <p>Essa relação permite investigar como a posição de uma 
+                  massa na haste modifica a resistência à rotação. 
+                  Para a mesma massa, quanto maior a distância ao eixo, 
+                  maior será sua contribuição para o momento de inércia. 
+                  A expressão pressupõe que a haste gira em torno de uma 
+                  extremidade fixa e que a massa acoplada pode ser aproximada por um ponto material.</p>
 
-                <h4 id="torque">Torque ou momento de força</h4>
+                
+                
+                
+                
+                
+                  <h4 id="torque">Torque ou momento de força</h4>
                 <p>O torque representa a capacidade de uma força produzir rotação em torno de um eixo. No movimento de queda, a força gravitacional pode gerar um torque que acelera a haste e as massas acopladas. Para uma massa pontual a uma distância $r$ do eixo, o módulo do torque gravitacional é:</p>
                 $$\tau_g = m \cdot g \cdot r \cdot \sin\theta$$
                 <p>Em que $\theta$ é o ângulo entre a haste e a vertical para baixo. A dinâmica rotacional do sistema é descrita por:</p>
