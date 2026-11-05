@@ -8,6 +8,7 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style>
+      
         @charset "UTF-8";
 
         :root {
@@ -334,6 +335,12 @@
             color: #000;
           }
         }
+
+        .imgsFont {
+          font-size: 0.50rem;
+          color: var(--cor-secundaria);
+          font-family: Arial, Helvetica, sans-serif;
+        }
     </style>
 </head>
 <body>
@@ -493,7 +500,9 @@
              
  <div class="img2">
             <img src="imagens/baner - Copia.jpg" alt="Banner do Projeto">
-        </div>
+        <code class="imgsFont">Fonte: da Wikpédia, imagem modificada.</code>
+                </div>
+          </div>
 
 
             <p>Retornando ao embate sobre geração de energia infinita, a mostra científica propõe uma análise contemporânea e com as tecnologias atuais na pesquisa de sistemas de geração de energia, contextualizando com os fatos da História e seus pensadores.</p>
@@ -541,13 +550,14 @@
         <section id="maquina">
             <h2>Apresentação da máquina</h2>
             <div class="img2">
-                <img src="imagens/Captura de tela 2026-11-04 203611.png" alt="Vistas da Máquina"><br>
-                
+                <img src="imagens/Captura de tela 2026-11-04 203611.png" alt="Vistas da Máquina">
+                <code class="imgsFont">Fonte: Autores</code>
             </div>
             <p>O corpo da máquina tem como base uma plataforma feita de madeira MDF, composta basicamente por três recortes de madeira encaixados de forma que dois recortes servem de equilíbrio (pés) do recorte de madeira que servirá de plano para a montagem do sistema pendular.</p>
             <div class="img2">
-                <img src="imagens/base.jpg" alt="Vistas da Máquina" width="20%"><br> 
-            </div>
+                <img src="imagens/base.jpg" alt="Vistas da Máquina" width="20%">
+            <code class="imgsFont">Fonte: Autores</code>
+              </div>
             
             <p>O sistema pendular é composto basicamente por uma haste de 20,6 cm, com 
 uma extremidade contendo um parafuso que serve de presilha para pesos de metal, e 
@@ -557,7 +567,8 @@ pêndulo também temos um transferidor centralizado e alinhado para medida de
 ângulos. Considera-se essa perspectiva como sendo a parte frontal da máquina. </p>
 
 <div class="img2">
-                <img src="imagens/imagem tecnica dos pendulos.png" alt="Vistas da Máquina" width="100%"><br> 
+                <img src="imagens/imagem tecnica dos pendulos.png" alt="Vistas da Máquina" width="100%">
+                <code class="imgsFont">Fonte: Autores</code> 
             </div>
             <p>Na associação de engrenagens; conectada em série a engrenagem motriz, temos 
 a engrenagem multiplicadora, composta de duas engrenagens de raios 22,5 mm e 4,5 
@@ -566,8 +577,9 @@ multiplicadora temos a engrenagem do pinhão de 1,5 mm de raio, que serve para a
 rotação do eixo de um pequeno motor de driver RF-300C-11440 na configuração de 
 gerador.</p>
             <div class="img2">
-                <img src="imagens/gerador .png" alt="Vistas da Máquina" width="100%"><br> 
-            </div>
+                <img src="imagens/gerador .png" alt="Vistas da Máquina" width="100%"> 
+           <code class="imgsFont">Fonte: Google, imagem modificada por autores</code> 
+              </div>
             <p>
               Na parte de trás da máquina pode ser observada apenas a furação de encaixe do 
 motor-gerador, e seus respectivos polos soldados a um conector de áudio tipo borne de 
@@ -575,8 +587,9 @@ pressão para amplificadores, servindo de saídas elétricas do gerador, tem a f
 de conectar as agulhas dos medidores elétricos.
             </p>
            <div class="img2">
-                <img src="imagens/verso.jpg" alt="Vistas da Máquina" width="20%"><br> 
-            </div>
+                <img src="imagens/verso.jpg" alt="Vistas da Máquina" width="20%"> 
+            <code class="imgsFont">Fonte: Autores</code>
+              </div>
           </section>
 
         <section id="conceitos">
@@ -755,63 +768,108 @@ centrípeta e aceleração tangencial. </p>
                 $$I_m = m \cdot r^2$$
                 <p>Assim, para uma haste com uma massa pontual acoplada:</p>
                 $$I_{\text{total}} = \frac{1}{3} M_h L^2 + m \cdot r^2$$
+                
                 <p>Essa relação permite investigar como a posição de uma 
                   massa na haste modifica a resistência à rotação. 
                   Para a mesma massa, quanto maior a distância ao eixo, 
                   maior será sua contribuição para o momento de inércia. 
                   A expressão pressupõe que a haste gira em torno de uma 
-                  extremidade fixa e que a massa acoplada pode ser aproximada por um ponto material.</p>
+                  extremidade fixa e que a massa acoplada pode ser 
+                  aproximada por um ponto material.</p>
 
-                
-                
-                
-                
                 
                   <h4 id="torque">Torque ou momento de força</h4>
-                <p>O torque representa a capacidade de uma força produzir rotação em torno de um eixo. No movimento de queda, a força gravitacional pode gerar um torque que acelera a haste e as massas acopladas. Para uma massa pontual a uma distância $r$ do eixo, o módulo do torque gravitacional é:</p>
+                <p>O torque representa a capacidade de uma força 
+                  produzir rotação em torno de um eixo. No movimento de 
+                  queda, a força gravitacional pode gerar um torque que 
+                  acelera a haste e as massas acopladas. 
+                  Para uma massa pontual a uma distância r do eixo, 
+                  o módulo do torque gravitacional é:</p>
                 $$\tau_g = m \cdot g \cdot r \cdot \sin\theta$$
-                <p>Em que $\theta$ é o ângulo entre a haste e a vertical para baixo. A dinâmica rotacional do sistema é descrita por:</p>
+                <div class="img3">
+                <img src="imagens/calc7.png" alt="Vistas da Máquina" width="100%"><br> 
+            </div>
+                
+
+
                 $$\sum \tau = I_{\text{total}} \cdot \alpha$$
-                <p>Essa relação é a forma rotacional da Segunda Lei de Newton. Ela permite determinar a aceleração angular a partir do torque resultante e do momento de inércia. Comparar o torque gravitacional em diferentes posições da haste ajuda a explicar por que a aceleração angular varia durante a queda.</p>
+                <p>Essa relação é a forma rotacional da Segunda Lei de Newton. 
+                  Ela permite determinar a aceleração angular a partir do torque 
+                  resultante e do momento de inércia. Comparar o torque gravitacional 
+                  em diferentes posições da haste ajuda a explicar 
+                  por que a aceleração angular varia durante a queda.</p>
 
                 <h4 id="conservacao-energia">Conservação da energia mecânica</h4>
-                <p>Transformação da energia potencial gravitacional em energia cinética durante a queda. Quando o sistema desce, sua energia potencial diminui. Em condições ideais, sem atrito ou resistência do ar, essa variação corresponde ao aumento da energia cinética de rotação.</p>
+                <p>Transformação da energia potencial gravitacional em energia cinética 
+                  durante a queda. Quando o sistema desce, sua energia potencial diminui. 
+                  Em condições ideais, sem atrito ou resistência do ar, 
+                  essa variação corresponde ao aumento da energia cinética de rotação.</p>
                 $$E_p + E_c = \text{constante}$$
                 <p>Para um sistema que gira em torno de um eixo fixo:</p>
                 $$M \cdot g \cdot \Delta h_{CM} = \frac{1}{2} I_{\text{total}} \cdot \omega^2$$
-                <p>A expressão considera que o sistema parte do repouso e que $M$ representa a massa total do conjunto, enquanto $\Delta h_{CM}$ é a descida vertical de seu centro de massa. A velocidade angular final é representada por $\omega$. A equação permite estimar a velocidade angular alcançada após uma determinada queda, desde que sejam conhecidos o momento de inércia e a variação da altura do centro de massa.</p>
+                
+                 <img src="imagens/calc8.png" alt="Vistas da Máquina" width="100%"><br> 
+                
 
                 <h4 id="velocidades">Velocidade angular e velocidade linear</h4>
-                <p>Em uma haste rígida que gira em torno de um eixo fixo, todos os pontos possuem a mesma velocidade angular instantânea, mas suas velocidades lineares dependem da distância ao eixo. A relação é:</p>
+                <p>Em uma haste rígida que gira em torno de um eixo fixo, 
+                  todos os pontos possuem a mesma velocidade angular 
+                  instantânea, mas suas velocidades lineares dependem 
+                  da distância ao eixo. A relação é:</p>
                 $$v = \omega \cdot r$$
-                <p>Assim, um ponto localizado mais distante do eixo apresenta maior velocidade linear para a mesma velocidade angular. A aceleração tangencial também pode ser relacionada à aceleração angular:</p>
+                <p>Assim, um ponto localizado mais distante do eixo 
+                  apresenta maior velocidade linear para a mesma 
+                  velocidade angular. A aceleração tangencial 
+                  também pode ser relacionada à aceleração angular:</p>
                 $$a_t = \alpha \cdot r$$
-                <p>No experimento da máquina, observando diferentes pontos da haste, é possível comparar suas velocidades e acelerações lineares, mesmo que todos pertençam ao mesmo corpo rígido.</p>
+                <p>No experimento da máquina, observando diferentes 
+                  pontos da haste, é possível comparar suas velocidades 
+                  e acelerações lineares, mesmo que todos 
+                  pertençam ao mesmo corpo rígido.</p>
 
                 <h4 id="tracao">Tração em corpos presos a uma haste rígida</h4>
-                <p>A tração é uma força de contato que tende a puxar um corpo ao longo de um elemento que o conecta a outro corpo ou a um suporte. No estudo de movimentos circulares, ela aparece principalmente quando a massa está presa por um fio ou cabo.</p>
-                <p>No projeto, existe uma distinção importante: uma haste rígida pode exercer tanto tração quanto compressão, dependendo das forças e do movimento. Por isso, é mais geral falar em força exercida pela haste sobre a massa. Se o corpo estiver preso por um fio flexível, a força transmitida pelo fio é denominada tensão ou tração no fio.</p>
+                <p>A tração é uma força de contato que tende a puxar 
+                  um corpo ao longo de um elemento que o conecta a 
+                  outro corpo ou a um suporte. No estudo de movimentos 
+                  circulares, ela aparece principalmente quando 
+                  a massa está presa por um fio ou cabo.</p>
+                <p>No projeto, existe uma distinção importante: uma haste 
+                  rígida pode exercer tanto tração quanto compressão, 
+                  dependendo das forças e do movimento. Por isso, 
+                  é mais geral falar em força exercida pela haste 
+                  sobre a massa. Se o corpo estiver preso por um fio 
+                  flexível, a força transmitida pelo fio é denominada 
+                  tensão ou tração no fio.</p>
 
                 <h4 id="calculo-tracao">Como calcular a tração no movimento circular</h4>
-                <p>Considere uma massa $m$ presa a um fio de comprimento $r$, girando em uma trajetória circular vertical. A força de tração depende da velocidade da massa e de sua posição na trajetória. A equação fundamental, tomando o sentido para o centro como positivo, é:</p>
+                <p>Considere uma massa m presa a um fio de comprimento r, 
+                  girando em uma trajetória circular vertical. 
+                  A força de tração depende da velocidade da 
+                  massa e de sua posição na trajetória. A equação 
+                  fundamental, tomando o sentido para o centro como 
+                  positivo, é:</p>
                 $$\sum F_r = \frac{m \cdot v^2}{r}$$
                 
                 <p><strong>Massa na posição mais baixa da trajetória:</strong><br>
-                Na posição inferior, a tração aponta para cima, em direção ao centro da circunferência, enquanto o peso aponta para baixo. Assim:</p>
+                Na posição inferior, a tração aponta para cima, em direção 
+                ao centro da circunferência, enquanto o peso aponta para baixo. Assim:</p>
                 $$T - m \cdot g = \frac{m \cdot v^2}{r} \implies T = \frac{m \cdot v^2}{r} + m \cdot g$$
 
                 <p><strong>Massa na posição mais alta da trajetória:</strong><br>
                 Na posição superior, tanto a tração quanto o peso apontam para o centro da trajetória. Portanto:</p>
                 $$T + m \cdot g = \frac{m \cdot v^2}{r} \implies T = \frac{m \cdot v^2}{r} - m \cdot g$$
-                <p>Essa expressão exige que a tração calculada seja não negativa para que o fio permaneça esticado. Se o resultado exigir tração negativa, o fio não consegue manter aquela trajetória circular nas condições consideradas.</p>
+                <p>Essa expressão exige que a tração calculada seja 
+                  não negativa para que o fio permaneça esticado. 
+                  Se o resultado exigir tração negativa, o fio não consegue 
+                  manter aquela trajetória circular nas condições consideradas.</p>
 
-                <h4 id="aplicacoes-haste">Aplicações dos cálculos à máquina</h4>
-                <ul>
-                    <li>Massa: $m = 0,02\text{ kg}$</li>
-                    <li>Raio: $r = 0,21\text{ m}$</li>
-                    <li>Velocidade tangencial: $v = 2\text{ m/s}$</li>
-                    <li>Gravidade: $g = 9,81\text{ m/s}^2$</li>
-                </ul>
+
+
+
+                <h4 id="aplicacoes-haste">Aplicações dos cálculos na máquina</h4>
+                 <img src="imagens/calc9.png" alt="Vistas da Máquina" width="40%"><br> 
+                
+
                 <p>Primeiro, calculamos a força necessária para a resultante centrípeta:</p>
                 $$\frac{m \cdot v^2}{r} = \frac{0,02 \cdot 2^2}{0,21} \approx 0,381\text{ N}$$
                 <p>O peso da massa é:</p>
@@ -820,27 +878,53 @@ centrípeta e aceleração tangencial. </p>
                 $$T = 0,381 + 0,1962 = 0,5772\text{ N}$$
                 <p>Na posição superior:</p>
                 $$T = 0,381 - 0,1962 \approx 0,185\text{ N}$$
-                <p>Esses dois resultados são válidos se a velocidade for $2\text{ m/s}$ na posição específica considerada. Eles ilustram como a tração varia conforme a orientação do movimento em relação à gravidade.</p>
+                <p>Esses dois resultados são válidos se a velocidade for 2 m/s
+                   na posição específica considerada. Eles ilustram 
+                   como a tração varia conforme a orientação do 
+                   movimento em relação à gravidade.</p>
 
                 <h4 id="haste-experimento">A haste rígida do experimento</h4>
                 <p>Para uma massa presa a uma haste rígida, na posição inferior, a equação radial pode ser escrita como:</p>
                 $$F_{\text{haste}} - m \cdot g = \frac{m \cdot v^2}{r} \implies F_{\text{haste}} = \frac{m \cdot v^2}{r} + m \cdot g$$
                 <p>Esse resultado representa a componente radial da força exercida pela haste. Na posição superior, a componente radial do peso aponta para o centro, de modo que:</p>
                 $$F_{\text{haste}} = \frac{m \cdot v^2}{r} - m \cdot g$$
-                <p>Aqui, o sinal positivo representa uma força para dentro e o negativo, uma força para fora. Uma haste rígida pode transmitir ambas as direções de força, ao contrário de um fio ideal, que só pode puxar. A análise da tração ou da força exercida pela haste permite determinar a intensidade da força de vínculo necessária para manter a massa na trajetória circular.</p>
+                <p>
+                  Aqui, o sinal positivo representa uma força para dentro e o negativo, uma força 
+para fora. Uma haste rígida pode transmitir ambas as direções de força, ao contrário de 
+um fio ideal, que só pode puxar. a análise da tração ou da força exercida pela haste 
+permite determinar a intensidade da força de vínculo necessária para manter a massa 
+na trajetória circular. Seu valor depende da massa, da velocidade, do raio e da posição 
+angular do corpo, sendo importante distinguir a tração de um fio da força que uma haste 
+rígida pode transmitir. 
+                </p>
+
+
             </article>
 
             <article id="engrenagens">
                 <h3>Elementos de máquinas (engrenagens)</h3>
-                <p>As engrenagens são elementos mecânicos utilizados para transmitir movimento rotacional e torque entre eixos. Elas são encontradas em diversos equipamentos, como motores, geradores acionados mecanicamente, relógios, redutores, multiplicadores de velocidade e máquinas industriais.</p>
-                <p>Quando duas engrenagens com dentes compatíveis estão engrenadas, o contato entre seus dentes transmite movimento de uma para a outra. Em condições ideais, a relação entre suas velocidades de rotação depende de seus raios primitivos ou, de forma equivalente, do número de dentes.</p>
-                <p>Uma engrenagem maior, ao acionar uma menor, produz aumento da velocidade angular da engrenagem conduzida. Por outro lado, quando uma engrenagem menor aciona uma maior, ocorre redução da velocidade de rotação, acompanhada, idealmente, de aumento do torque disponível.</p>
+                <p>As engrenagens são elementos mecânicos utilizados para transmitir 
+                  movimento rotacional e torque entre eixos. Elas são encontradas em 
+                  diversos equipamentos, como motores, geradores acionados mecanicamente, 
+                  relógios, redutores, multiplicadores de velocidade e máquinas industriais.</p>
+                <p>Quando duas engrenagens com dentes compatíveis estão engrenadas, 
+                  o contato entre seus dentes transmite movimento de uma para a outra. 
+                  Em condições ideais, a relação entre suas velocidades de rotação 
+                  depende de seus raios primitivos ou, de forma equivalente, do número de dentes.</p>
+                <p>Uma engrenagem maior, ao acionar uma menor, produz aumento da 
+                  velocidade angular da engrenagem conduzida. Por outro lado, 
+                  quando uma engrenagem menor aciona uma maior, ocorre redução 
+                  da velocidade de rotação, acompanhada, idealmente, 
+                  de aumento do torque disponível.</p>
 
                 <h4 id="descricao-engrenagens">Descrição do sistema de engrenagens do aparelho</h4>
-                <div class="img-placeholder">
-                    <img src="imagens/engrenagens_detalhe.png" alt="Conjunto de engrenagens e medição com paquímetro"><br>
-                    <code>Caminho da imagem: imagens/engrenagens_detalhe.png</code>
-                </div>
+                
+<div class="img2">
+                <img src="imagens/sistema.jpg" alt="Vistas da Máquina" > 
+           <code class="imgsFont">Fonte: Autores</code> 
+              </div>
+
+
                 <p>O mecanismo é composto por três conjuntos funcionais:</p>
                 <ul>
                     <li><strong>Engrenagem motriz:</strong> Raio = $24\text{ mm}$ (entrada do sistema).</li>
