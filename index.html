@@ -341,6 +341,12 @@
           color: var(--cor-secundaria);
           font-family: Arial, Helvetica, sans-serif;
         }
+    
+    
+    .marcadores{
+      text-align: left;
+      margin-left: 20px;
+    }
     </style>
 </head>
 <body>
@@ -1266,47 +1272,179 @@ abordado posteriormente no estudo de perdas por resistências.
             </p>
               </article>
 
-
-
-
-
-
-
-              
             <article id="medicoes-eletricas">
                 <h3>Medições elétricas</h3>
                 <h4 id="multimetro">Instrumentação elétrica - Multímetro MXT YX-360TRn</h4>
-                <p>Para a medição da tensão elétrica produzida pelo motor-gerador RF-300C-11440, utiliza-se o multímetro analógico MXT YX-360TRn de ponteiro móvel na escala de $10\text{ V DCV}$. A opção por instrumentos analógicos simples justifica-se pelo caráter demonstrativo e qualitativo do protótipo experimental.</p>
-            </article>
+                
+                <p>
+                  Para a medição da tensão elétrica produzida pelo motor-gerador RF-300C-11440, 
+utiliza-se o multímetro analógico MXT YX-360TRn, instrumento de ponteiro móvel 
+destinado à medição de grandezas elétricas, como tensão, corrente e resistência. 
+                </p>
+    <p>
+      Características técnicas principais:
+    </p>
+    <p class="marcadores"> <br>
+• Modelo: MXT YX-360TRn. <br>
+• Tipo: multímetro analógico de ponteiro. <br>
+• Medição de tensão contínua (DCV): escalas de 0,1 V a 1000 V, conforme a versão. <br>
+• Escala selecionada no experimento: 10 V em corrente contínua (DCV). <br>
+• Indicação: leitura visual por ponteiro em escala graduada. 
+    </p>
+    <p>
+      A escala de 10 V DCV foi escolhida para acompanhar a tensão produzida pelo 
+gerador durante cada queda de peso, permitindo observar as variações da grandeza 
+elétrica sem utilizar uma faixa de medição excessivamente elevada. 
+    </p>
+    <p>
+      A opção por medições analógicas e instrumentos básicos justifica-se pelo 
+caráter demonstrativo do aparelho, construído como uma maquete experimental. Como 
+o mecanismo apresenta imprecisões decorrentes de atritos, oscilações, 
+desalinhamentos e perdas na transmissão por engrenagens, não há, nesta etapa, 
+necessidade de instrumentação de alta precisão. O objetivo é observar qualitativamente 
+a conversão de energia mecânica em elétrica, utilizando medições simples e 
+compatíveis com as limitações construtivas do protótipo. 
+
+    </p>
+              </article>
         </section>
 
         <section id="coleta-dados">
             <h2>Coleta e análise de dados</h2>
-            <div class="img-placeholder">
-                <img src="imagens/aparelho_medicao.png" alt="Aparelho de medição e protótipos em bancada"><br>
-                <code>Caminho da imagem: imagens/aparelho_medicao.png</code>
-            </div>
+            
 
             <article id="perdas-mecanicas">
-                <h3>Estimando as perdas de energia por resistências mecânicas</h3>
-                <p>Propõe-se um método comparativo entre o pêndulo acoplado à máquina e um pêndulo ideal de referência (com mesma haste e massa, mas sem o acoplamento das engrenagens e gerador).</p>
+             
+            <h3>Estimando as perdas de energia por resistências mecânicas</h3>
+                <div class="img2">
+                <img src="imagens/20261026_101529.jpg" alt="Aparelho de medição e protótipos em bancada" width="30%">
+                <code class="imgsFont">Fonte: Autores</code> 
+            </div>
+            <p>
+              A análise das perdas por resistências mecânicas tem como objetivo estimar a 
+parcela de energia dissipada durante o funcionamento da máquina, considerando 
+conjuntamente os efeitos de atrito, resistência ao movimento e demais perdas 
+introduzidas pelos componentes do mecanismo. Como a avaliação individual de cada 
+elemento — engrenagens, eixos, articulações e gerador — tornaria o estudo 
+excessivamente complexo, propõe-se um método comparativo baseado na utilização 
+de um pêndulo de referência.
+            </p>
+<p>
+  Esse pêndulo é construído com as mesmas características físicas do pêndulo da 
+máquina, mantendo-se a equivalência de massa e comprimento da haste, porém sem o 
+acoplamento ao sistema de engrenagens e ao gerador. A partir da liberação dos dois 
+sistemas sob condições iniciais equivalentes, compara-se o ângulo máximo alcançado 
+pela massa após o movimento. A diferença entre os resultados permite estimar a 
+dissipação adicional de energia provocada pelo conjunto mecânico da máquina. 
+</p>
 
-                <h4 id="analise-perdas">Análise comparativa das perdas de energia</h4>
+<p>
+  A validade dessa abordagem fundamenta-se no princípio da conservação da 
+energia mecânica, segundo o qual a redução da altura máxima atingida pelo pêndulo 
+está relacionada à energia dissipada durante o movimento. Assim, a comparação 
+permite representar, por meio de uma única relação matemática, o efeito combinado 
+das resistências introduzidas pela máquina, dispensando a medição individual de cada 
+componente. Trata-se, portanto, de um método experimental simplificado, adequado à 
+avaliação preliminar do protótipo e à identificação de oportunidades de 
+aperfeiçoamento mecânico.
+</p>
+
+                <h4 id="analise-perdas">Análise comparativa das perdas de energia por resistências 
+mecânicas</h4>
+<p>
+  Para estimar as perdas de energia provocadas pelo conjunto mecânico da 
+máquina, propõe-se uma análise comparativa entre dois sistemas pendulares: o 
+pêndulo acoplado à máquina e um pêndulo de referência, denominado ideal. Para fins 
+de modelagem, considera-se que ambos apresentam as mesmas características 
+físicas, condições iniciais e condições de análise, diferenciando-se apenas pela 
+presença do sistema de engrenagens e do gerador no primeiro caso.
+</p>
                 <h4 id="queda-maquina">Queda do peso no pêndulo da máquina</h4>
-                $$E_m = m \cdot g \cdot h_m = m \cdot g \cdot L \cdot (1 - \cos\theta_m)$$
+               
+                <div class="img2">
+                <img src="imagens/analizeQueda.png" alt="Aparelho de medição e protótipos em bancada" width="100%">
+                <code class="imgsFont">Fonte: Autores</code> 
+            </div>
+
+
+                <p>
+                Durante a queda, a massa m, inicialmente posicionada a uma altura h0, 
+transforma sua energia potencial gravitacional em energia cinética. Entretanto, parte 
+dessa energia é dissipada pelas resistências introduzidas pelo mecanismo. Na posição 
+de retorno máximo, a velocidade angular é momentaneamente nula. Assim, a energia 
+potencial restante pode ser expressa por: 
+               </p>
+               
+                $$E_m = m \cdot g \cdot h_m $$
+
+                <p>
+                  Considerando a geometria pendular, com a posição angular medida a partir da 
+vertical inferior: 
+                </p>
+<br>
+$$E_m = m \cdot g \cdot L \cdot (1 - \cos\theta_m)$$
+<p>
+  Em que θm representa o ângulo máximo de retorno do pêndulo da máquina. 
+</p>
 
                 <h4 id="queda-ideal">Queda do peso no pêndulo ideal</h4>
-                <div class="img-placeholder">
-                    <img src="imagens/pendulo_ideal.png" alt="Sequência de fotos do Pêndulo Ideal de Referência"><br>
-                    <code>Caminho da imagem: imagens/pendulo_ideal.png</code>
-                </div>
-                $$E_i = m \cdot g \cdot h_i = m \cdot g \cdot L \cdot (1 - \cos\theta_i)$$
-
+ <div class="img2">
+                <img src="imagens/analizeQueda2.png" alt="Aparelho de medição e protótipos em bancada" width="100%">
+                <code class="imgsFont">Fonte: Autores</code> 
+            </div>
+<p>
+  No segundo sistema, utiliza-se uma haste com a mesma massa e comprimento, 
+submetida à mesma posição inicial de liberação, porém sem o acoplamento às 
+engrenagens e ao gerador. Admitindo condições ideais de comparação, a energia 
+potencial restante na posição de retorno máximo é: 
+</p>
+                $$E_i = m \cdot g \cdot h_i $$
+<p>
+  Aplicando a mesma relação geométrica: 
+</p>
+                 $$E_i = m \cdot g \cdot L \cdot (1 - \cos\theta_i)$$
+<p>
+  Em que 𝜃𝑖 representa o ângulo máximo de retorno do pêndulo de referência.
+</p>
                 <h4 id="comparacao-sistemas">Comparação dos dois sistemas</h4>
-                $$\Delta E = E_i - E_m = m \cdot g \cdot L \cdot [(1 - \cos\theta_i) - (1 - \cos\theta_m)]$$
-                <p>O indicador percentual de dissipação adicional é dado por:</p>
+                <p>
+                  Como os dois pêndulos possuem a mesma massa e o mesmo comprimento de 
+haste, suas energias potenciais podem ser comparadas diretamente. A diferença entre 
+as energias restantes no retorno representa a dissipação adicional associada ao 
+conjunto mecânico da máquina, desde que as condições iniciais e as perdas próprias 
+dos dois pêndulos sejam equivalentes. Assim:
+                </p>
+                $$\Delta E = E_i - E_m$$
+                <p>
+Substituindo as expressões anteriores: 
+                </p>
+$$\Delta E = m \cdot g \cdot L \cdot [(1 - \cos\theta_i) - (1 - \cos\theta_m)]$$
+                <p>
+Para expressar essa diferença em relação à energia restante do pêndulo de 
+referência, define-se o indicador percentual de dissipação adicional: 
+                </p>
+                 $$D(\%) = \left[\frac{E_i - E_m}{E_i} \right] \times 100$$
+
+
+                <p>Cancelando os termos comuns mgL, obtém-se a formulação generalizada:</p>
+                <h4>Equação geral da dissipação adicional</h4>
                 $$D(\%) = \left[ 1 - \frac{1 - \cos\theta_m}{1 - \cos\theta_i} \right] \times 100$$
 
+                <p>
+                  Em que 𝜃𝑚 é o ângulo máximo de retorno do pêndulo da máquina e 𝜃𝑖 é o ângulo 
+máximo de retorno do pêndulo de referência.
+                </p>
+
+
+
+
+
+
+
+
+
+
+                
                 <h4 id="interpretacao">Interpretação dos resultados</h4>
                 <ul>
                     <li>$D = 0\%$: Os dois sistemas apresentam o mesmo alcance angular.</li>
