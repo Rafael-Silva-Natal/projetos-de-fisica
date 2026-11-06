@@ -650,9 +650,9 @@ centrípeta e aceleração tangencial. </p>
                   Quando a massa é liberada de uma posição inclinada, 
                   a gravidade pode fazê-la descer descrevendo um arco de circunferência.</p>
                 <ul>
-
+ 
                   <div class="img3">
-                <img src="imagens/calc3.png" alt="Vistas da Máquina" width="100%"><br> 
+                <img src="imagens/calc3.png" alt="Vistas da Máquina" width="60%"><br> 
             </div>
                 </ul>
 <div class="img3">
@@ -928,148 +928,351 @@ rígida pode transmitir.
                 <p>O mecanismo é composto por três conjuntos funcionais:</p>
 
 
-
-
-
-
-
-
-
-
-
                 
                 <ul>
-                    <li><strong>Engrenagem motriz:</strong> Raio = $24\text{ mm}$ (entrada do sistema).</li>
-                    <li><strong>Associação concêntrica:</strong> Engrenagem menor de raio $4,5\text{ mm}$ e Engrenagem maior de raio $22,5\text{ mm}$ (giram juntas no mesmo eixo).</li>
-                    <li><strong>Pinhão do motor/gerador:</strong> Raio = $1,5\text{ mm}$ (saída do trem de transmissão).</li>
+                    <li><strong>Engrenagem motriz:</strong> Raio = 24 mm (entrada do sistema).</li>
+                    <li><strong>Associação concêntrica:</strong> Engrenagem menor de raio 4,5 mm e Engrenagem maior de raio 22,5 mm (giram juntas no mesmo eixo).</li>
+                    <li><strong>Pinhão do motor/gerador:</strong> Raio = 1,5 mm (saída do trem de transmissão).</li>
                 </ul>
 
                 <h4 id="relacao-rotacoes">Relação matemática entre as rotações</h4>
-                <p>Para calcular as rotações, consideramos inicialmente engrenagens externas ideais, sem escorregamento. Quando duas engrenagens estão engrenadas, suas velocidades tangenciais no ponto de contato possuem o mesmo módulo:</p>
+                <p>Para calcular as rotações, consideramos inicialmente 
+                  engrenagens externas ideais, sem escorregamento. 
+                  Quando duas engrenagens estão engrenadas, suas velocidades 
+                  tangenciais no ponto de contato possuem o mesmo módulo.</p>
+                  <p>Portanto:</p>
                 $$\omega_1 r_1 = \omega_2 r_2$$
                 <p>Como a velocidade angular é proporcional à frequência de rotação, podemos escrever:</p>
-                $$N_2 = N_1 \cdot \frac{r_1}{r_2}$$
-                <p>Em que $N_1$ e $N_2$ são as rotações da engrenagem motriz e conduzida, e $r_1, r_2$ são os respectivos raios primitivos.</p>
-
+                $$n_2 = n_1 \cdot \frac{r_1}{r_2}$$
+              
+                
+                 <img src="imagens/calc10.png" alt="Vistas da Máquina" width="40%"><br> 
+               <p>
+                A mesma relação pode ser utilizada com rotações em rpm ou frequências de 
+rotação em hertz, desde que a unidade seja mantida consistente.
+               </p>
                 <h4 id="aplicacoes-engrenagens">Aplicações do cálculo na máquina</h4>
+                <h4 id="aplicacoes-engrenagens2">Cálculo da multiplicação de rotação em cada estágio </h4>
+                
+            
                 <h4 id="multiplicacao-rotacao">Primeiro estágio: engrenagem motriz para engrenagem menor</h4>
-                <p>Dados: $r_1 = 24\text{ mm}$, $r_2 = 4,5\text{ mm}$. A relação de transmissão é:</p>
+                <p>Dados: r 1 = 24 mm, r 2 = 4,5 mm. A relação de transmissão é:</p>
                 $$i_1 = \frac{r_1}{r_2} = \frac{24}{4,5} \approx 5,33$$
-                <p>Assim, $N_2 \approx 5,33 \cdot N_1$.</p>
+                
+                <p>Isso significa que a engrenagem menor gira aproximadamente 5,33 vezes mais 
+rápido que a engrenagem motriz. Se a engrenagem motriz realizar N1 rotações por 
+minuto, a engrenagem menor realizará: </p>
+
+ 
+
+ <div class="img2">
+                 <img src="imagens/calc11.png" alt="Vistas da Máquina" width="15%"><br> 
+              </div>
 
                 <h4 id="segundo-estagio">Segundo estágio: engrenagem maior para o pinhão</h4>
-                <p>Dados: $r_3 = 22,5\text{ mm}$, $r_4 = 1,5\text{ mm}$. A relação é:</p>
+                <p>A engrenagem maior possui raio de 22,5 mm, enquanto o pinhão possui raio de 
+1,5 mm. A relação de multiplicação é: </p>
                 $$i_2 = \frac{22,5}{1,5} = 15$$
-                <p>Como a engrenagem maior gira com a mesma rotação da menor ($N_2$), a rotação final do pinhão é $N_3 = 15 \cdot N_2$.</p>
+                <p>Portanto, o pinhão gira 15 vezes mais rápido que a engrenagem maior que o 
+aciona. Como a engrenagem maior está rigidamente ligada à engrenagem menor, ambas 
+possuem a mesma rotação. Assim: </p>
+
+ <div class="img2">
+                 <img src="imagens/calc12.png" alt="Vistas da Máquina" width="15%"><br> 
+              </div>
 
                 <h4 id="transmissao-total">Relação total de transmissão</h4>
-                <p>Multiplicando as duas relações:</p>
+                <p>Para determinar a multiplicação total, multiplicamos as relações dos dois 
+estágios, substituindo os valores:</p>
                 $$i_{\text{total}} = i_1 \cdot i_2 = \frac{24}{4,5} \cdot \frac{22,5}{1,5} = 80$$
-                <p>Para cada rotação completa da engrenagem motriz, o pinhão realiza teoricamente 80 rotações completas.</p>
+                
+                <p>O resultado demonstra que, para cada rotação completa da engrenagem motriz, 
+o pinhão realiza teoricamente 80 rotações completas. A multiplicação acontece em dois 
+estágios: o primeiro aumenta a rotação em aproximadamente 5,33 vezes, e o segundo a 
+multiplica por 15.</p>
 
                 <h4 id="rotacoes-frequencias">Cálculo das rotações e frequências</h4>
-                <p>A conversão entre rotação em rpm ($N$) e frequência mecânica em Hz ($f$) é dada por $f = N / 60$.</p>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Posição do mecanismo</th>
-                            <th>Rotação</th>
-                            <th>Frequência mecânica</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Engrenagem motriz</td>
-                            <td>$N_1$</td>
-                            <td>$N_1 / 60$</td>
-                        </tr>
-                        <tr>
-                            <td>Engrenagem menor</td>
-                            <td>$5,333 N_1$</td>
-                            <td>$5,333 N_1 / 60$</td>
-                        </tr>
-                        <tr>
-                            <td>Engrenagem maior</td>
-                            <td>$5,333 N_1$</td>
-                            <td>$5,333 N_1 / 60$</td>
-                        </tr>
-                        <tr>
-                            <td>Pinhão do motor/gerador</td>
-                            <td>$80 N_1$</td>
-                            <td>$80 N_1 / 60$</td>
-                        </tr>
-                    </tbody>
-                </table>
-
+                <p>A rotação mecânica pode ser expressa em rotações por minuto (rpm) ou em 
+frequência de rotação, medida em hertz (Hz). A conversão é:</p>
+<div class="img2">
+                 <img src="imagens/calc13.png" alt="Vistas da Máquina" width="15%">
+              </div>
+<p>
+  Em que N representa a rotação em rpm e f representa o número de voltas por 
+segundo. Para o sistema analisado, temos: 
+</p>
+<div class="img">
+                 <img src="imagens/calc14.png" alt="Vistas da Máquina" width="100%">
+              </div>  
+<p>
+  A rotação da engrenagem maior é igual à da menor porque as duas estão fixadas 
+ao mesmo eixo.
+</p>
                 <h4 id="consequencias-mecanicas">Consequências mecânicas da multiplicação</h4>
-                <p>A potência rotacional é expressa por $P = \tau \cdot \omega$. Para uma transmissão ideal com relação $80:1$:</p>
+                <p>A multiplicação de velocidade não ocorre sem consequências. Em um sistema 
+ideal, o aumento da velocidade angular é acompanhado por uma redução proporcional 
+do torque disponível no eixo de saída, considerando a conservação da potência 
+mecânica. A potência rotacional é expressa por: </p>
+
+<div class="img3">
+                 <img src="imagens/calc15.png" alt="Vistas da Máquina" width="100%">
+              </div>
+
+               
                 $$\tau_{\text{saída}} = \frac{\tau_{\text{entrada}}}{80}$$
-                <p>Em um sistema real, o atrito reduz a potência transmitida, e o torque de resistência oferecido pelo gerador afeta a velocidade da engrenagem motriz.</p>
+               
+                <p>Essa relação é uma aproximação ideal. Em um mecanismo real, o atrito nos 
+dentes, nos eixos e nos mancais reduz a potência transmitida. No aparelho, essa 
+característica é relevante porque o motor/gerador oferece resistência mecânica quando 
+está conectado a uma carga elétrica. O torque exigido pelo gerador pode afetar a 
+velocidade efetiva da engrenagem motriz. </p>
             </article>
 
             <article id="dinamica-gerador">
                 <h3>Dinâmica de máquinas (gerador)</h3>
-                <div class="img-placeholder">
-                    <img src="imagens/motor_rf300.png" alt="Motor RF-300C-11440"><br>
-                    <code>Caminho da imagem: imagens/motor_rf300.png</code>
-                </div>
-                <p>A dinâmica de máquinas analisa o movimento considerando forças, torques e perdas de energia. No aparato experimental, o movimento pendular faz com que a haste oscile, transmitindo energia mecânica ao conjunto de engrenagens para mover o eixo do pequeno motor de corrente contínua funcionando como gerador.</p>
+                <div class="img">
+                <img src="imagens/motor2.png" alt="Vistas da Máquina" width="20%"> 
+           <code class="imgsFont">Fonte: Google imagens</code> 
+              </div>
+                <p>
+                  A dinâmica de máquinas constitui uma área da Mecânica aplicada dedicada à 
+análise do movimento de sistemas mecânicos, considerando a ação de forças, torques, 
+momentos de inércia e perdas de energia. Em mecanismos que convertem energia 
+mecânica em energia elétrica, essa análise permite compreender como o movimento de 
+uma estrutura é transmitido ao eixo de uma máquina elétrica e em que condições pode 
+ocorrer a geração de uma tensão elétrica.
+                </p>
+<p>
+  No aparato experimental estudado, o movimento mecânico é produzido pela 
+queda de uma massa presa à extremidade de uma haste rígida articulada. Sob a ação da 
+gravidade, a massa movimenta-se em trajetória circular, fazendo com que a haste oscile 
+em torno de seu ponto de articulação. Como a engrenagem motriz está acoplada ao eixo 
+de rotação da haste, seu movimento angular é transmitido a um conjunto de 
+engrenagens que aumenta a velocidade angular no eixo de saída, conectado ao pequeno 
+motor de corrente contínua. 
+</p>
+<p>
+  Esse sistema permite estudar uma cadeia de conversão e transmissão de 
+energia: inicialmente, a massa possui energia potencial gravitacional; durante a queda, 
+parte dessa energia transforma-se em energia cinética de rotação e translação; em 
+seguida, o mecanismo de engrenagens transmite o movimento ao eixo do motor
+gerador. Quando esse eixo é acionado externamente, o motor pode operar como 
+gerador, produzindo uma diferença de potencial elétrico em seus terminais. A energia 
+elétrica obtida, entretanto, depende da velocidade de rotação, do torque disponível, das 
+características eletromagnéticas do motor e das perdas mecânicas e elétricas do 
+conjunto.
+</p>
+<p>
+  A análise deve considerar uma particularidade do aparelho: diferentemente de 
+um mecanismo acionado por rotação contínua, a haste realiza um movimento pendular 
+oscilatório. Assim, a engrenagem motriz não executa necessariamente uma revolução 
+completa em um único sentido. A engrenagem de saída pode inverter seu sentido de 
+rotação a cada reversão da haste, produzindo uma rotação alternada do eixo do motor
+gerador. Essa condição é relevante para a análise da tensão gerada, pois a polaridade 
+nos terminais de um motor de corrente contínua convencional pode mudar quando o 
+sentido de rotação é invertido. 
+
+</p>
 
                 <h4 id="motor-gerador">Características do motor-gerador RF-300C-11440</h4>
-                <p>O componente é um micromotor CC com escovas que funciona de maneira reversível. Quando acionado mecanicamente por uma fonte externa, produz tensão elétrica nos terminais. Especificações típicas da série RF-300 indicam tensões nominais entre $2\text{ V}$ e $3\text{ V}$ com rotação sem carga entre $2200\text{ rpm}$ e $3500\text{ rpm}$.</p>
+                <p>
+                  O componente identificado como RF-300C-11440 pertence à categoria dos 
+micromotores de corrente contínua com escovas. Motores dessa classe são utilizados 
+em mecanismos compactos e podem funcionar de maneira reversível: quando recebem 
+energia elétrica, produzem movimento mecânico; quando são acionados 
+mecanicamente por uma fonte externa, podem produzir tensão elétrica nos terminais. 
+                </p>
+<p>
+  É importante, porém, distinguir o funcionamento como motor daquele como 
+gerador. Os valores de rotação, corrente e torque informados em um datasheet 
+geralmente caracterizam o funcionamento como motor, sob condições de alimentação 
+e carga especificadas. Esses dados não devem ser interpretados automaticamente 
+como valores de geração elétrica.
+</p>
+            <p>
+              As fontes técnicas consultadas apresentam especificações diferentes para 
+variantes da família RF-300. Por exemplo, uma ficha técnica da série RF300 apresenta, 
+para o modelo RF300-11440, tensão nominal de 3 V, rotação sem carga de 
+aproximadamente 3.500 rpm e rotação próxima de 2.660 rpm no ponto de máxima 
+eficiência. Já uma ficha do modelo RF-300CA-11440 apresenta tensão nominal de 2 V e 
+rotação sem carga de aproximadamente 2.200 rpm. Portanto, esses valores são 
+referências de variantes próximas, não uma confirmação definitiva das características 
+do componente instalado no experimento.
+            </p>
 
                 <h4 id="relacoes-fisicas">Relações físicas aplicadas ao sistema</h4>
+                <p>
+                  A dinâmica do conjunto pode ser examinada por meio de três relações 
+fundamentais. 
+                </p>
+                
                 <h4 id="energia-potencial">1. Energia potencial gravitacional</h4>
+               <p>
+                Considerando uma massa m presa à extremidade da haste, a energia potencial 
+gravitacional relativa à posição mais baixa é dada por: 
+               </p>
                 $$E_p = m \cdot g \cdot \Delta h$$
-
+<p>
+  Em que g representa a aceleração da gravidade e Δh é a variação de altura da 
+massa. Durante a descida, essa energia pode transformar-se em energia cinética, 
+energia de rotação e energia dissipada por atrito e deformações. 
+</p>
                 <h4 id="transmissao-engrenagens">2. Transmissão por engrenagens</h4>
-                $$\omega_{\text{saída}} = 80 \cdot \omega_{\text{entrada}}$$
-
+                <p>
+                  Para engrenagens externas ideais, sem escorregamento, a relação entre as 
+velocidades angulares depende dos raios primitivos. No conjunto descrito 
+anteriormente, a transmissão foi estimada em uma relação total de aumento de 
+velocidade de 80 : 1. Assim, enquanto o movimento ocorre no mesmo sentido de 
+transmissão: 
+                </p>
+                $$|\omega_{\text{saída}} |= 80 \cdot |\omega_{\text{entrada}}|$$
+<p>
+  Essa relação é cinemática: não significa que a energia ou a potência aumentem 
+na mesma proporção. Em uma transmissão ideal, o aumento de velocidade 
+corresponde a uma redução proporcional do torque disponível; em um sistema real, 
+ainda existem perdas. 
+</p>
                 <h4 id="geracao-tensao">3. Geração de tensão elétrica</h4>
+               <p>
+                Em um motor de corrente contínua convencional acionado externamente, a 
+tensão induzida pode ser representada, de forma simplificada, por:
+               </p>
+               
                 $$E = k_e \cdot \omega$$
-                <p>Em que $E$ é a força eletromotriz induzida e $k_e$ é a constante do motor.</p>
-
+                <p>
+                  Em que E é a força eletromotriz induzida, ke é uma constante do motor e ω é a 
+velocidade angular do rotor. Essa relação indica que, sob condições comparáveis, o 
+aumento da velocidade de rotação tende a elevar a tensão induzida. A tensão 
+efetivamente medida nos terminais pode ser menor devido à resistência interna, à carga 
+conectada e às perdas. 
+                </p>
+                <p>
+                  No aparato estudado, portanto, a relação de engrenagens pode elevar a 
+velocidade angular transmitida ao rotor, mas não garante, por si só, uma geração 
+elétrica elevada. O resultado também depende da energia mecânica fornecida pela 
+massa, do movimento oscilatório da haste, do torque necessário para vencer o atrito e 
+a carga elétrica conectada ao gerador.
+                </p>
                 <h4 id="rotacao-frequencia">Rotação do pinhão e a frequência elétrica do gerador</h4>
-                <p>Em um gerador síncrono, a frequência elétrica $f_e$ relaciona-se com a rotação por:</p>
+                
+                <p>
+                  É importante distinguir a frequência mecânica de rotação do pinhão da 
+frequência elétrica produzida pelo gerador. O pinhão, pelos cálculos acima, possui uma 
+frequência mecânica teórica de 40 Hz no exemplo de entrada a 30 rpm. Isso não significa 
+necessariamente que a tensão elétrica gerada terá frequência de 40 Hz. Em um gerador 
+síncrono, a frequência elétrica depende da velocidade de rotação e do número de pares 
+de polos:
+                </p>
                 $$f_e = \frac{p \cdot N}{60}$$
-                <p>onde $p$ é o número de pares de polos.</p>
+                
+<div class="img3">
+                 <img src="imagens/calc16.png" alt="Vistas da Máquina" width="40%">
+              </div>
+
+                <p>Essa relação é aplicável a um gerador síncrono; outros tipos de motor/gerador 
+podem apresentar características diferentes, exigindo que se conheça sua construção..</p>
 
                 <h4 id="conclusao-mecanismo">Conclusão para a análise do mecanismo</h4>
-                <p>Como o movimento é pendular, a haste não gira indefinidamente, mas oscila. Mesmo com uma rotação parcial da engrenagem motriz, o pinhão realiza várias voltas devido à taxa de 80:1.</p>
+               
+<p>
+O ponto central da análise é que a engrenagem motriz não realiza 
+necessariamente uma volta completa. Ela acompanha o movimento angular da haste, 
+que oscila entre posições extremas. Mesmo com uma rotação parcial da engrenagem 
+motriz, o pinhão pode realizar várias voltas devido à relação de transmissão de 80:1 que 
+calculamos anteriormente. 
+</p>
+<p>
+Há, contudo, uma distinção física importante: a massa não cai indefinidamente. 
+Em um movimento pendular ideal, ela desce, alcança uma posição de velocidade 
+máxima e sobe até um ponto de retorno. O ângulo máximo depende da posição inicial 
+de liberação, da geometria do mecanismo e das limitações físicas do aparelho.
+</p>
+
 
                 <h4 id="haste-pinhao">Relação matemática entre a haste e o pinhão</h4>
-                <p>Para um ângulo $\theta$ (em graus) percorrido pela engrenagem motriz, o número de voltas do pinhão é:</p>
+                
+                <p>
+                  A relação total de transmissão calculada anteriormente é:
+                </p>
+                <div class="img3">
+                 <img src="imagens/calc17.png" alt="Vistas da Máquina" width="20%">
+              </div>
+              <p>
+                Portanto, o pinhão realiza 80 voltas para cada volta completa da engrenagem 
+motriz, sob a hipótese de engrenamento ideal. Se a engrenagem motriz gira apenas um 
+ângulo θ, medido em graus, o número de voltas do pinhão é: 
+              </p>
                 $$N_p = 80 \cdot \left(\frac{\theta}{360^\circ}\right) = \frac{2\theta}{9}$$
-
+<p>
+  Essa é a relação fundamental da máquina. Ela transforma diretamente o ângulo 
+percorrido pela haste e pela engrenagem motriz no número teórico de voltas do pinhão. 
+Atenção: essa relação pressupõe que a haste e a engrenagem motriz compartilhem o 
+mesmo eixo angular, sem folga ou deslizamento no acoplamento. 
+</p>
                 <h4 id="queda-angulos">Dividindo a queda em ângulos</h4>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Ângulo percorrido pela motriz ($\theta$)</th>
-                            <th>Voltas da motriz</th>
-                            <th>Voltas do pinhão</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>$5^\circ$</td><td>0,0139</td><td>1,11</td></tr>
-                        <tr><td>$10^\circ$</td><td>0,0278</td><td>2,22</td></tr>
-                        <tr><td>$15^\circ$</td><td>0,0417</td><td>3,33</td></tr>
-                        <tr><td>$30^\circ$</td><td>0,0833</td><td>6,67</td></tr>
-                        <tr><td>$45^\circ$</td><td>0,1250</td><td>10,00</td></tr>
-                        <tr><td>$60^\circ$</td><td>0,1667</td><td>13,33</td></tr>
-                        <tr><td>$90^\circ$</td><td>0,2500</td><td>20,00</td></tr>
-                    </tbody>
-                </table>
-
+                <p>
+                  Para estabelecer o ângulo da queda, adotaremos como referência a posição 
+vertical para baixo da haste. Assim, θ =0º representa a posição mais baixa, e θ =90º 
+representa a haste na horizontal. Se a massa for liberada de um ângulo inicial θ0, a haste 
+percorrerá esse ângulo até chegar à posição mais baixa. A tabela mostra o número de 
+voltas do pinhão nesse trecho de descida.
+                </p>
+                <div class="img3">
+                 <img src="imagens/calc18.png" alt="Vistas da Máquina" width="100%">
+              </div>
+<p>
+  Observe que a engrenagem motriz precisa percorrer apenas um quarto de volta, 
+ou 90º, para produzir teoricamente 20 voltas completas do pinhão. Isso ocorre porque a 
+transmissão multiplica a rotação por um fator de 80. 
+</p>
                 <h4 id="angulo-maximo">Qual seria o ângulo máximo da queda?</h4>
-                <p>Para uma queda a partir da posição horizontal ($\theta = 90^\circ$) até a vertical inferior, a engrenagem motriz executa 0,25 voltas e o pinhão completa teoricamente 20 voltas.</p>
+                <p>
+                  Aqui chegamos na parte mais relevante do projeto e precisamos distinguir o que 
+pode ser calculado do que precisa ser observado no aparelho. A exemplo, uma massa 
+de 34 g e a haste de 21,6 cm não determinam, sozinhas, o ângulo máximo. Esse ângulo 
+depende da posição em que a massa é liberada e de eventuais batentes ou limitações 
+mecânicas. 
+                </p>
+                <p>
+                  Podemos, porém, adotar uma hipótese inicial útil: a massa é liberada com a haste 
+na horizontal, sem impulso inicial. Nesse caso, o ângulo inicial em relação à vertical para 
+baixo é 90º. A queda até a posição vertical corresponde a θ = 90º. Logo, a rotação da 
+engrenagem motriz é:  
+                </p>
+                
+  <div class="img3">
+                 <img src="imagens/calc19.png" alt="Vistas da Máquina" width="100%">
+              </div>
 
+<p>Assim, se a haste partir da horizontal e descer até a vertical inferior, o pinhão 
+poderá completar teoricamente 20 voltas durante essa descida. Isso não significa que a 
+haste completou uma volta. Ela percorreu apenas um quarto de circunferência.</p>
+
+               
                 <h4 id="energia-hipotese">Energia potencial disponível nessa hipótese</h4>
+                <p>
+                  A variação da energia potencial gravitacional pode ser calculada por:
+                </p>
                 $$\Delta E_p = m \cdot g \cdot L (1 - \cos\theta)$$
-                <p>Para $\theta = 90^\circ$, $m = 0,034\text{ kg}$ e $L = 0,216\text{ m}$:</p>
+                
+                <p>Para uma descida a partir da horizontal, 90º, portanto: </p>
+                
                 $$\Delta E_p = 0,034 \cdot 9,81 \cdot 0,216 \approx 0,0720\text{ J}$$
-            </article>
+            <p>
+              Esse é o valor ideal da energia potencial convertida em energia cinética durante 
+a descida, desconsiderando perdas. A energia efetivamente transmitida ao gerador será 
+menor pois existe atrito, deformações e extração de energia elétrica, esse assunto será 
+abordado posteriormente no estudo de perdas por resistências.
+            </p>
+              </article>
 
+
+
+
+
+
+
+              
             <article id="medicoes-eletricas">
                 <h3>Medições elétricas</h3>
                 <h4 id="multimetro">Instrumentação elétrica - Multímetro MXT YX-360TRn</h4>
