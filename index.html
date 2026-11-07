@@ -347,6 +347,14 @@
       text-align: left;
       margin-left: 20px;
     }
+    .alinhamentoDeAleatorios{
+      text-align: center;
+      font-size: 0.70rem;
+    }
+
+    .btn{
+      display:inline-block;padding:10px 14px;border-radius:10px;background:rgb(14, 13, 13);color:rgb(92, 246, 133);text-decoration:none;font-weight:600;font-size:13px;box-shadow:0 8px 28px rgba(253, 15, 3, 0.14)
+    }
     </style>
 </head>
 <body>
@@ -1423,88 +1431,269 @@ $$\Delta E = m \cdot g \cdot L \cdot [(1 - \cos\theta_i) - (1 - \cos\theta_m)]$$
 Para expressar essa diferença em relação à energia restante do pêndulo de 
 referência, define-se o indicador percentual de dissipação adicional: 
                 </p>
-                 $$D(\%) = \left[\frac{E_i - E_m}{E_i} \right] \times 100$$
-
-
+                 $$D(\%) = \frac{E_i - E_m}{E_i} \times 100$$
                 <p>Cancelando os termos comuns mgL, obtém-se a formulação generalizada:</p>
-                <h4>Equação geral da dissipação adicional</h4>
                 $$D(\%) = \left[ 1 - \frac{1 - \cos\theta_m}{1 - \cos\theta_i} \right] \times 100$$
-
+<h4 class="alinhamentoDeAleatorios">Equação geral da dissipação</h4>
                 <p>
                   Em que 𝜃𝑚 é o ângulo máximo de retorno do pêndulo da máquina e 𝜃𝑖 é o ângulo 
 máximo de retorno do pêndulo de referência.
                 </p>
 
 
-
-
-
-
-
-
-
-
-                
                 <h4 id="interpretacao">Interpretação dos resultados</h4>
-                <ul>
-                    <li>$D = 0\%$: Os dois sistemas apresentam o mesmo alcance angular.</li>
-                    <li>$D > 0\%$: Menor alcance no pêndulo da máquina (presença de dissipação adicional).</li>
-                    <li>$D < 0\%$: Maior alcance na máquina (exige verificação das condições de teste).</li>
-                </ul>
+                <p>
+                  O resultado obtido representa a dissipação adicional de energia mecânica 
+associada à presença das engrenagens, dos eixos e do gerador, em comparação ao 
+comportamento do pêndulo de referência.
+                </p>
+                <p>
+                  <br>
+• D = 0%: os dois sistemas apresentam o mesmo alcance angular. <br>
+• D maior que 0%: o pêndulo da máquina apresenta menor alcance, indicando 
+dissipação adicional. <br>
+• D menor que 0%: o pêndulo da máquina apresenta maior alcance, situação que 
+exige verificar as condições experimentais e as hipóteses de comparação. <br>
+                </p>
+               
             </article>
 
             <article id="moto-perpetuo">
                 <h3>Verificando a energia necessária para o moto-perpétuo</h3>
+               <p>
+A ideia principal do projeto, não está apenas estudando a geração de energia 
+elétrica por um movimento pendular, mas investigando o balanço energético de uma 
+máquina que tenta utilizar parte da energia elétrica que ela própria produz para 
+sustentar ou ampliar seu movimento mecânico. 
+               </p>
+               <p>
+A questão central da pesquisa é verificar experimentalmente quão próximo esse 
+sistema pode chegar de um ciclo de funcionamento energeticamente eficiente, 
+identificando a diferença entre a energia produzida, a energia dissipada e a energia 
+necessária para manter ou completar o movimento. 
+               </p>
+               
                 <h4 id="funcionamento-energetico">Funcionamento energético da máquina</h4>
-                <p>O processo transforma a energia potencial em cinética, acionando o gerador que produz uma tensão variável até parar momentaneamente no ponto de retorno.</p>
-
+                <p>
+                  O processo começa com uma massa posicionada em determinada altura. Ao ser 
+liberada, ela realiza um movimento pendular, convertendo energia potencial 
+gravitacional em energia cinética. Esse movimento aciona as engrenagens, que 
+transmitem a rotação ao motor-gerador. Durante o deslocamento, o gerador produz 
+uma tensão elétrica, cuja intensidade varia conforme a velocidade de rotação. Quando 
+a massa alcança sua altura máxima de retorno, sua velocidade angular torna-se 
+momentaneamente nula. Consequentemente, a tensão induzida pelo gerador também 
+tende a zero naquele instante.
+                </p>
                 <h4 id="energia-mecanica">Identificação da energia mecânica necessária</h4>
-                <p>Calcula-se a energia necessária para completar uma revolução de $360^\circ$ a partir da energia potencial restante na altura máxima atingida.</p>
+                <p>
+Um dos objetivos do estudo é determinar o ângulo máximo alcançado pela massa 
+e utilizá-lo como referência para calcular a energia mecânica adicional necessária para 
+completar uma revolução de 360°. Considerando uma haste rígida de comprimento L, 
+com a massa m em sua extremidade, a energia potencial gravitacional em determinada 
+posição angular pode ser calculada por:
+                </p>
+   $$E_p = m \cdot g \cdot L \cdot (1 - \cos\theta)$$
 
+                <p>
+A partir da posição máxima alcançada, pode-se determinar a diferença de energia 
+potencial entre essa posição e a posição necessária para completar o movimento. Essa 
+diferença representa uma referência para avaliar o esforço mecânico adicional que 
+precisaria ser fornecido ao sistema.
+                </p>
                 <h4 id="energia-gerada">Relação entre energia elétrica gerada e energia mecânica necessária</h4>
-                <p>Mede-se o balanço entre a energia potencial inicial, a energia mecânica útil, a geração elétrica e as perdas dissipativas.</p>
-
+                <p>
+Aqui está o ponto central da investigação. A pesquisa pretende verificar se a 
+energia elétrica produzida durante a queda da massa poderia ser convertida novamente 
+em energia mecânica, por meio de um acionamento elétrico, para impulsionar o próprio 
+mecanismo. Em termos gerais, a análise envolve:
+                </p>
+                <p><br>
+• Energia mecânica inicialmente armazenada na massa. <br>
+• Energia mecânica transmitida pelas engrenagens. <br>
+• Energia elétrica produzida pelo gerador. <br>
+• Energia dissipada por resistências mecânicas e elétricas. <br>
+• Energia elétrica necessária para produzir o impulso mecânico adicional. <br>
+                </p>
+                <br>
+                <p>
+A comparação entre esses valores permitirá avaliar a eficiência energética do 
+conjunto e identificar quanto de energia ainda seria necessário para completar o 
+movimento.
+                </p>
                 <h4 id="questao-moto-perpetuo">A questão do moto-perpétuo</h4>
-                <p>Em consonância com as Leis da Termodinâmica, a máquina demonstra experimentalmente que as dissipações e a ineficiência de conversão impedem a sustentação do movimento sem trabalho externo.</p>
-
+                <p>
+É importante estabelecer uma distinção científica: o objetivo não precisa ser 
+demonstrar a possibilidade de um moto-perpétuo, mas investigar experimentalmente 
+os limites de eficiência de um sistema que tenta realimentar seu próprio movimento. 
+                </p>
+                <p>
+Pela primeira lei da Termodinâmica, a energia não pode ser criada 
+espontaneamente. Pela segunda lei, as transformações reais apresentam 
+irreversibilidades e dissipações, impedindo que um sistema cíclico converta 
+integralmente a energia recebida em trabalho útil. Portanto, mesmo que a máquina 
+consiga recuperar parte da energia elétrica produzida e devolvê-la ao movimento 
+mecânico, sempre haverá perdas no processo. A investigação pode justamente 
+quantificar essa diferença.
+                </p>
+                <p>
+Uma observação importante para os cálculos: é a distinção do ângulo máximo 
+alcançado pela massa da posição angular necessária para completar uma volta. A 
+energia necessária depende da geometria da trajetória e da configuração da haste. Além 
+disso, a energia elétrica gerada não pode ser avaliada apenas pelo pico de tensão: será 
+necessário considerar também a corrente e o tempo de geração, pois a energia elétrica 
+corresponde à integral da potência ao longo do tempo.
+                </p>
+                
                 <h4 id="dados-reais">Coletando dados reais para os cálculos na máquina</h4>
-                <div class="img-placeholder">
-                    <img src="imagens/pesagem_componentes.png" alt="Pesagem da haste, ruelas e componentes na balança de precisão"><br>
-                    <code>Caminho da imagem: imagens/pesagem_componentes.png</code>
+                <p>
+Para operar com a máquina, primeiramente devemos observar as medidas que 
+serão usadas no experimento. 
+                </p>
+                <div class="img2">
+                    <img src="imagens/Roela.jpg"  width="30%">
+                    <code class="imgsFont">Fonte: Autores</code>
                 </div>
-                <ul>
-                    <li>Massa unitária da ruela de metal: $3,45\text{ g}$</li>
-                    <li>Massa da haste de alumínio: $5,33\text{ g}$</li>
-                    <li>Massa do parafuso e porca borboleta: $5,06\text{ g}$</li>
-                    <li>Massa das duas ruelas de compressão: $2,58\text{ g}$</li>
-                    <li>Massa total do sistema de presilha: $7,64\text{ g}$</li>
-                </ul>
-
+                
+                <p>
+ Como unidade padrão de peso a máquina usa ruelas de metal de 3,45 gramas, 
+podendo ser combinadas e adicionadas somas de ruelas a fim de se obter um peso 
+estimado, para um evento que se quer analisar.                 
+                </p>
+                <div class="img2">
+                    <img src="imagens/haste.jpg"  width="30%">
+                    <code class="imgsFont">Fonte: Autores</code>
+                </div>
+                
+                <p>
+                  A haste é composta de alumínio e tem massa de 5,33 g.
+                </p>
+                <div class="img2">
+                    <img src="imagens/parafuso e borboleta.png"  width="50%">
+                    <code class="imgsFont">Fonte: Autores</code>
+                </div>
+                <p>
+          Numa das extremidades da haste temos o parafuso que é responsável por 
+prender os pesos que serão examinados no experimento, e esse pequeno sistema de 
+presilha dos pesos é composta de duas partes relevantes, o parafuso com porca 
+borboleta de 5,06 g, e as duas ruelas de ajuste de compressão de 2,58 g.         
+                </p>
+<div class="img2">
+                    <img src="imagens/presilha de roelas.png"  width="50%">
+                    <code class="imgsFont">Fonte: Autores</code>
+                </div>
+  Uma observação importante da análise de um peso, se dá pela soma do peso que 
+se quer medir com os pesos do sistema da presilha dos pesos. Por exemplo se queremos 
+medir a queda de 10,35 g (três ruelas) devemos somar 10,35 g + 7,64 g, ou seja, o peso 
+real que será medido no experimento é de 17,99 gramas, aproximadamente 18 gramas.              <p>
+                  
+                </p>
+              
                 <h4 id="queda-18g">Observando a queda de aproximadamente 18 g na máquina</h4>
-                <div class="img-placeholder">
-                    <img src="imagens/fixacao_pesos.png" alt="Fixação dos pesos na haste"><br>
-                    <code>Caminho da imagem: imagens/fixacao_pesos.png</code>
+                
+                <p>
+                  Ao ajustar o peso deve-se elevá-lo ao ponto de equilíbrio na parte superior da 
+máquina, posicionando a haste numa marcação de 90º graus com o horizonte. 
+                </p>
+                <div class="img2">
+                    <img src="imagens/1.png" alt="queda1" width="20%">
+                    <code class="imgsFont">Fonte: Autores</code>
                 </div>
-                <p>Para uma amostra de 3 ruelas ($10,35\text{ g}$), somando-se à presilha ($7,64\text{ g}$), obtém-se uma massa total de $17,99\text{ g} \approx 18\text{ g}$. Liberando da posição de $90^\circ$, observou-se um ângulo de retorno de aproximadamente $180^\circ + 60^\circ = 240^\circ$ e uma tensão máxima de $1,8\text{ V}$.</p>
-                <p>No pêndulo ideal, o ângulo de retorno equivalente alcançou $180^\circ + 90^\circ + 45^\circ = 315^\circ$.</p>
-            </article>
+                  <p>
+                  Feito isso provocasse o desequilíbrio fazendo com que o peso caia no sentido 
+horário.
+                </p>
+                <div class="img2">
+                    <img src="imagens/2.png" alt="queda2" width="20%">
+                    <code class="imgsFont">Fonte: Autores</code>
+                </div>
+                  <p>
+                  Na trajetória do evento coleta-se o valor do ângulo onde existe a resistência 
+máxima ao movimento, e a voltagem máxima que aparece no multímetro. Nesse 
+experimento foi observado um angulo aproximado de 180º+60º=240º e uma voltagem 
+de aproximadamente 1,8 Volts.
+                </p>
+                <div class="img2">
+                    <img src="imagens/2_1.png" alt="medidaEletrica" width="20%">
+                    <code class="imgsFont">Fonte: Autores</code>
+                </div>
+                  <p>
+                  Sequencialmente fazemos a operação análoga no pêndulo ideal para medir por 
+comparação, a perda por resistências no sistema da máquina.
+                </p>
+                <div class="img2">
+                    <img src="imagens/medidaPenduloIdeal.png"  width="30%">
+                    <code class="imgsFont">Fonte: Autores</code>
+                </div>
+                  <p>
+                  Para a amostra de 18 gramas o ângulo obtido no pêndulo ideal de comparação do 
+sistema, foi de aproximadamente 180º + 90º + 45º = 315º.
+                </p>
 
             <article id="associacao-geradores">
                 <h3>Associações de geradores</h3>
-                <div class="img-placeholder">
-                    <img src="imagens/associacao_geradores.png" alt="Configuração com associação de três geradores por correia"><br>
-                    <code>Caminho da imagem: imagens/associacao_geradores.png</code>
+                <div class="img2">
+                    <img src="imagens/associacaoDegeradores2.jpg"  width="30%">
+                    <code class="imgsFont">Fonte: Autores</code>
                 </div>
+               <p>
+Vamos analisar agora uma nova configuração que propõe ampliar a capacidade 
+de geração elétrica da máquina sem modificar a relação de transmissão das 
+engrenagens, utilizando uma associação de três geradores acionados mecanicamente 
+por um único sistema de polias e correia.
+               </p>
+               <p>
+A ideia é aproveitar a rotação já obtida no eixo do pinhão e distribuí-la para outros 
+dois geradores, mantendo os três motores-geradores funcionando na mesma 
+frequência mecânica.
+               </p>
 
                 <h4 id="geracao-eletrica">O que acontece com a geração elétrica?</h4>
-                <ul>
-                    <li><strong>Em série:</strong> As tensões individuais se somam (ex: $3 \times 2\text{ V} = 6\text{ V}$).</li>
-                    <li><strong>Em paralelo:</strong> Aumenta a capacidade total de corrente mantendo a tensão de $2\text{ V}$.</li>
-                </ul>
+                <p>
+Se as três polias possuem o mesmo diâmetro e não existe escorregamento da 
+correia, os três geradores apresentam aproximadamente a mesma velocidade angular. 
+Entretanto, é importante distinguir duas possibilidades de associação elétrica: 
+                </p>
+                <p>
+                  Em série: As tensões podem ser somadas, se as polaridades estiverem 
+corretamente sincronizadas.
+                </p>
+
+                <p>
+                  Em paralelo: As correntes disponíveis podem ser somadas, desde que as 
+tensões e polaridades sejam compatíveis.
+                </p>
+
+                <p>
+                  Em dada análise, se cada gerador produzir aproximadamente 2 V:
+                </p>
+
+                <p><br>
+
+                  • Três geradores em série: aproximadamente 6 V em circuito aberto. <br>
+• Três geradores em paralelo: aproximadamente 2 V, mas com maior capacidade 
+potencial de fornecimento de corrente.
+                </p>
+<br>
+                <p>
+                  Esses valores são teóricos e dependem das características dos motores, das 
+cargas conectadas e das perdas.
+                </p>
+
 
                 <h4 id="aspecto-experimento">Um aspecto importante para o experimento</h4>
-                <p>A associação de geradores não gera energia extra; o acoplamento de mais rotores aumenta o torque resistente no eixo, reduzindo a altura de alcance do pêndulo.</p>
-            </article>
+                <p>
+                  A associação de geradores não cria energia adicional. Ela permite distribuir a 
+conversão da energia mecânica disponível entre três unidades. Ao adicionar dois 
+geradores, o sistema também passa a exigir mais torque para movimentar os rotores. 
+Consequentemente, uma massa de 10,2 g poderá apresentar uma redução no ângulo 
+máximo de alcance, pois parte da energia mecânica será utilizada para vencer as 
+resistências adicionais dos geradores.
+                </p>
+                <div class="img2">
+                    <img src="imagens/associaçaoDeGeradores.jpg"  width="40%">
+                    <code class="imgsFont">Fonte: Autores</code>
+                </div>
+              </article>
         </section>
 
         <section id="contextualizacao">
@@ -1512,45 +1701,212 @@ máximo de retorno do pêndulo de referência.
             
             <article id="maquina-joule">
                 <h3>A máquina de Joule</h3>
-                <div class="img-placeholder">
-                    <img src="imagens/joule_apparatus.png" alt="Desenho histórico do aparato experimental de Joule"><br>
-                    <code>Caminho da imagem: imagens/joule_apparatus.png</code>
+                
+                 <div class="img2">
+                    <img src="imagens/Joule's_Apparatus_(Harper's_Scan).png"  width="40%">
+                    <code class="imgsFont">Fonte: Wikipédia</code>
                 </div>
-                <p>James Prescott Joule (1818-1889) demonstrou a equivalência entre trabalho mecânico e calor através do célebre experimento das pás rotativas em recipiente com água acionadas por pesos descendentes, estabelecendo que $1\text{ cal} \approx 4,186\text{ J}$.</p>
+
+                <p>
+O físico inglês James Prescott Joule (1818–1889) teve papel fundamental no 
+desenvolvimento da Termodinâmica ao demonstrar experimentalmente a equivalência 
+entre trabalho mecânico e calor. Seu experimento mais conhecido utilizava um 
+dispositivo com massas suspensas, polias e pás acopladas a um eixo dentro de um 
+recipiente com água. 
+                </p>
+                <p>
+Ao liberar as massas, a energia potencial gravitacional era convertida em trabalho 
+mecânico, movimentando as pás e provocando agitação da água. Devido às resistências 
+viscosas, parte da energia mecânica era transformada em energia térmica, produzindo 
+um pequeno aumento de temperatura. Joule mediu cuidadosamente a variação térmica 
+e relacionou-a ao trabalho realizado pelas massas, estabelecendo experimentalmente 
+o equivalente mecânico do calor, aproximadamente 4,186 J para cada caloria.
+                </p>
+                <p>
+A importância de seu trabalho estava na capacidade de quantificar e generalizar 
+uma transformação energética, demonstrando que diferentes manifestações de energia 
+obedecem a uma relação de equivalência e conservação. Essa contribuição 
+fundamentou o desenvolvimento da Primeira Lei da Termodinâmica, segundo a qual a 
+energia não é criada nem destruída, mas transformada entre diferentes formas. 
+                </p>
+
+ <div class="img2">
+                    <img src="imagens/images (1).jpg"  width="30%">
+                    <code class="imgsFont">Fonte: Wikipédia, James Prescott Joule</code>
+                </div>
 
                 <h4 id="analise-joule">Análise crítica e relação com o projeto experimental</h4>
-                <div class="img-placeholder">
-                    <img src="imagens/joule_portrait_large.png" alt="James Prescott Joule"><br>
-                    <code>Caminho da imagem: imagens/joule_portrait_large.png</code>
-                </div>
-                <p>Enquanto Joule relacionou energia mecânica e térmica, o experimento presente estabelece o ciclo entre energia potencial gravitacional, energia mecânica rotacional, energia elétrica e dissipações associadas.</p>
-            </article>
+                
+                <p>
+Sob a perspectiva do experimento de Joule, a máquina pendular estudada 
+apresenta uma proposta de investigação semelhante: utilizar a queda de uma massa 
+para produzir trabalho mecânico, convertê-lo em energia elétrica por meio de geradores 
+e, posteriormente, investigar a possibilidade de reaproveitar essa energia para acionar o 
+próprio mecanismo.
+                </p>
+                <p>
+                  Entretanto, enquanto Joule demonstrou a equivalência entre trabalho mecânico 
+e calor, o presente projeto procura quantificar as transformações entre energia 
+potencial gravitacional, energia mecânica, energia elétrica e novamente energia 
+mecânica. A investigação também considera as perdas introduzidas pelos 
+componentes da máquina e a energia adicional necessária para completar o movimento 
+pendular e reposicionar a massa.
+                </p>
+                <p>
+                  Criticamente, o experimento não pretende demonstrar a possibilidade de 
+funcionamento de um moto-perpétuo, mas investigar os limites físicos de um sistema 
+de realimentação energética. A comparação entre a energia produzida e a energia 
+consumida permitirá avaliar seu rendimento e identificar as perdas decorrentes das 
+conversões sucessivas. Dessa forma, assim como o trabalho de Joule contribuiu para 
+estabelecer uma compreensão quantitativa da conservação da energia, a máquina 
+pendular busca aplicar esse princípio a um modelo experimental de conversão e 
+reaproveitamento eletromecânico.
+                </p>
+              
+                
+              </article>
 
             <article id="fake-physics">
                 <h3>Fake physics</h3>
-                <p>Analisa-se criticamente o surgimento de conteúdos em mídias digitais que prometem fontes infinitas de energia e "moto-perpétuos" manipulados visualmente, reforçando o valor do método científico rigoroso na desmistificação de tais conteúdos.</p>
-            </article>
+                
+                <p>
+A popularização das plataformas digitais trouxe novas possibilidades de 
+divulgação científica, mas também favoreceu o surgimento de uma tendência 
+preocupante: as chamadas Fake Physics. O termo pode ser utilizado para caracterizar 
+conteúdos que apresentam supostas descobertas e máquinas revolucionárias sem 
+fundamentação científica, frequentemente acompanhadas de montagens 
+cinematográficas, efeitos visuais e demonstrações manipuladas para atrair 
+visualizações e engajamento.
+                </p>
+                <p>
+Nesse cenário, conceitos como energia livre, geração ilimitada de eletricidade e 
+moto-perpétuo são frequentemente apresentados como descobertas ocultadas ou 
+tecnologias capazes de contrariar princípios fundamentais da Física. O problema não 
+está em questionar teorias ou propor novas experiências, mas em divulgar conclusões 
+sem medições verificáveis, fundamentação matemática ou reprodutibilidade 
+experimental.
+                </p>
+                <p>
+Diante dessa realidade, torna-se fundamental diferenciar a investigação 
+científica da produção de conteúdos sensacionalistas. Um experimento legítimo não 
+precisa apresentar resultados extraordinários para possuir valor científico; sua 
+relevância está na metodologia, na transparência das medições, na análise crítica dos 
+resultados e no respeito às leis físicas conhecidas. A ciência avança quando questiona 
+seus próprios limites, mas não quando abandona os critérios que permitem distinguir 
+uma descoberta de uma ilusão. 
+                </p>
+               
+              </article>
 
             <article id="tecnologias-atuais">
                 <h3>Procurando soluções em tecnologias atuais</h3>
-                <p>Explora-se o conceito de <em>Energy Harvesting</em> (captação de energia ambiental: solar, eólica, piezoelétrica) para compensar as perdas energéticas do sistema sem violar o princípio de conservação.</p>
-            </article>
+               <p>
+A proposta de ampliar o funcionamento da máquina pendular por meio de fontes 
+naturais de energia encontra correspondência em uma área tecnológica conhecida 
+como Energy Harvesting, ou captação de energia ambiental. Essa área investiga 
+dispositivos capazes de aproveitar pequenas quantidades de energia disponíveis no 
+ambiente, como radiação solar, vento, vibrações, diferenças de temperatura e 
+variações de pressão, convertendo-as em energia elétrica ou mecânica utilizável.
+               </p>
+               <p>
+O princípio é particularmente relevante para o projeto: em vez de exigir que toda 
+a energia necessária ao funcionamento seja fornecida por uma bateria ou fonte elétrica 
+convencional, a máquina poderia receber uma contribuição complementar do 
+ambiente, destinada a compensar parte das perdas mecânicas e elétricas do ciclo.
+               </p>
+               <p>
+É importante, entretanto, estabelecer uma premissa física: os fenômenos 
+naturais não são fontes de energia ilimitada e sem origem. A luz solar, o vento, as marés 
+e os gradientes térmicos representam fluxos de energia existentes na natureza. A 
+tecnologia permite captá-los e aproveitá-los, mas sempre com eficiência limitada
+               </p>
+               
+                
+              </article>
         </section>
 
         <section id="conclusao">
             <h2>Conclusão</h2>
-            <div class="img-placeholder">
-                <img src="imagens/maquina_final.png" alt="Visão completa da máquina montada no painel"><br>
-                <code>Caminho da imagem: imagens/maquina_final.png</code>
-            </div>
-            <p>O desenvolvimento deste estudo permitiu investigar a conversão, a transmissão e o aproveitamento da energia em um sistema eletromecânico pendular. A comparação entre o pêndulo acoplado e o de referência permitiu mensurar a taxa de dissipação adicional pelas resistências mecânicas e magnéticas.</p>
-            <p>O trabalho conclui reafirmando que o moto-perpétuo permanece irrealizável, e destaca a importância da máquina como excelente ferramenta pedagógica e experimental para o ensino de Física e Engenharia.</p>
-        </section>
+           
+<p>
+O desenvolvimento deste estudo permitiu investigar diferentes aspectos 
+relacionados à conversão, à transmissão e ao aproveitamento da energia em um 
+sistema eletromecânico de funcionamento pendular. A partir da construção de um 
+protótipo experimental, foi possível estabelecer relações entre a energia potencial 
+gravitacional, o movimento mecânico, a transmissão por engrenagens e a geração de 
+energia elétrica, considerando também as perdas presentes nos componentes do 
+conjunto.
+</p>
+<p>
+  As análises realizadas demonstraram a importância de compreender não apenas 
+a quantidade de energia produzida pelo gerador, mas também as condições mecânicas 
+necessárias para sua produção. Nesse sentido, a comparação entre o pêndulo de 
+referência e o pêndulo acoplado ao mecanismo possibilitou desenvolver uma 
+abordagem para estimar a dissipação energética adicional introduzida pelo sistema de 
+transmissão e geração. Essa análise contribui para compreender como as resistências 
+mecânicas influenciam o desempenho global da máquina.
+</p>
+<p>
+  Outro aspecto relevante consiste na possibilidade de integrar fontes 
+complementares de energia ambiental, como a solar, a eólica e outras formas de 
+captação energética. A utilização dessas fontes poderá reduzir a necessidade de 
+alimentação externa convencional, contribuindo para o desenvolvimento de um sistema 
+com maior autonomia operacional. Entretanto, a viabilidade dessa proposta depende 
+da avaliação das energias efetivamente captadas, armazenadas, consumidas e 
+dissipadas durante os ciclos de funcionamento. 
+</p>
+<p>
+  Dessa forma, o estudo não busca demonstrar a existência de uma máquina de 
+movimento perpétuo, mas investigar experimentalmente os limites de eficiência de um 
+sistema eletromecânico cíclico com recuperação energética e alimentação 
+complementar. A conservação da energia permanece como princípio fundamental para 
+a interpretação dos resultados, sendo necessário contabilizar todas as formas de 
+energia envolvidas no funcionamento do protótipo.
+</p>
+<p>
+  Conclui-se, portanto, que a principal contribuição deste trabalho está na 
+construção de uma proposta experimental que integra princípios da mecânica, do 
+eletromagnetismo e da conversão energética em uma mesma estrutura de investigação. 
+Os resultados e métodos desenvolvidos constituem uma base para aperfeiçoamentos 
+futuros, especialmente na medição do torque de arranque, da velocidade de rotação, da 
+potência elétrica, da eficiência de armazenamento e da energia necessária para reiniciar 
+cada ciclo. A partir dessas informações, será possível avaliar quantitativamente o 
+potencial de recuperação energética de máquinas e identificar caminhos para reduzir 
+suas perdas e ampliar sua autonomia de funcionamento.
+</p>
+<div class="img2">
+                    <img src="imagens/modelo 1.jpg"  width="30%">
+                    <code class="imgsFont">Fonte: Autores</code>
+                </div>
+
+          </section>
 
         <footer class="rodape">
             <p>© PET Física IFRN-CNAT — Estudo Contemporâneo dos Pêndulos</p>
         </footer>
     </main>
-
+<br><br>
+   <div class="resources-list" style="margin-top:12px">
+            <div class="resource">
+              <div>
+                <div><strong>Arquivos do projéto disponiveis para download:</strong></div>
+                <br>
+              </div>
+              <button class="btn" onclick="baixarArquivo()">⬇ Baixar PDF do artigo ⬇</button>
+            </div>
+    
+</div>
+ <script>
+ 
+function baixarArquivo() {
+  const caminhoArquivo = encodeURI("../Downloads/Pêndulos versão atualizada.pdf");
+  const link = document.createElement("a");
+  link.href = caminhoArquivo;
+  link.download = "../Downloads/Pêndulos versão atualizada.pdf";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+  </script> 
 </body>
 </html>
