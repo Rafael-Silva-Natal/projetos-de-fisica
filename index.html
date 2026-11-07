@@ -355,6 +355,18 @@
     .btn{
       display:inline-block;padding:10px 14px;border-radius:10px;background:rgb(14, 13, 13);color:rgb(92, 246, 133);text-decoration:none;font-weight:600;font-size:13px;box-shadow:0 8px 28px rgba(253, 15, 3, 0.14)
     }
+
+    .links a {
+            color: #2832f8;
+           
+            font-size: 14px;
+            text-shadow: 0 0 5px #00cc00;
+            transition: transform 0.3s, text-shadow 0.3s;
+        }
+        .links a:hover {
+            transform: translateX(5px);
+            text-shadow: 0 0 8px #00cc00;
+        }
     </style>
 </head>
 <body>
@@ -502,9 +514,10 @@
             <li><a href="#conclusao">Conclusão</a></li>
           </ol>
         </nav>
-<div class="img2">
-                <img src="imagens/Gemini_Generated_Image_7e6htl7e6htl7e6h.jpg" alt=""><br>
-                </div>
+<div class="img3">
+                <img src="imagens/Gemini_Generated_Image_7e6htl7e6htl7e6h.jpg" width="40%" alt="Ilustração do projeto">
+                <code class="imgsFont">Ilustração</code>
+              </div>
        
         <!-- CORPO DO TEXTO ADAPTADO -->
 
@@ -611,11 +624,26 @@ de conectar as agulhas dos medidores elétricos.
             
             <article id="segunda-lei">
                 <h3>Segunda Lei de Newton</h3>
-                <p>A Segunda Lei de Newton estabelece que a aceleração de um corpo é determinada pela força resultante que atua sobre ele e por sua massa. Em termos físicos, uma força resultante maior produz maior aceleração para uma mesma massa, enquanto um corpo de maior massa exige uma força maior para alcançar a mesma aceleração.</p>
-                <p>Essa lei é expressa matematicamente pela relação entre força resultante, massa e aceleração:</p>
-                 <div class="img3">
+                <p>A Segunda Lei de Newton estabelece que a aceleração de um corpo 
+                  é determinada pela força resultante que atua sobre ele e 
+                  por sua massa. Em termos físicos, uma força resultante maior 
+                  produz maior aceleração para uma mesma massa, enquanto 
+                  um corpo de maior massa exige uma força maior para 
+                  alcançar a mesma aceleração.</p>
+                <p>Essa lei é expressa matematicamente pela 
+                  relação entre força resultante, massa e aceleração:</p>
+                 
+                <!-- $$\sum F = m \cdot \alpha$$
+                 <p>
+                  Em que: <br>
+• ∑  𝐹⃗ é a força resultante, medida em newtons (N). <br>
+• m é a massa do corpo, medida em kilogramas (kg) <br>
+• 𝛼⃗ é a aceleração do corpo, em metros por segundo ao quadrado (𝑚/𝑠2). 
+                 </p>-->
+                <div class="img3">
                 <img src="imagens/calc1.png" alt="Vistas da Máquina" width="100%"><br> 
             </div>
+
                 <p>
                   No caso de uma massa em movimento circular, mesmo que sua velocidade 
 escalar permaneça constante, sua direção muda continuamente. Por isso, existe uma 
@@ -680,10 +708,12 @@ centrípeta e aceleração tangencial. </p>
                 $$F_t = m \cdot g \cdot \sin\theta$$
                 <p>Portanto, pela Segunda Lei de Newton:</p>
                 $$m \cdot g \cdot \sin\theta = m \cdot a_t \implies a_t = g \cdot \sin\theta$$
-                <p>Essa relação mostra que a aceleração tangencial depende da inclinação da haste em relação à vertical, e não da massa do corpo.</p>
+                <p>Essa relação mostra que a aceleração tangencial 
+                  depende da inclinação da haste em relação à vertical, e não da massa do corpo.</p>
 
                 <h4 id="aceleracao-angular">Aceleração angular</h4>
-                <p>Como a massa percorre um arco de raio r, a aceleração tangencial também pode ser escrita como:</p>
+                <p>Como a massa percorre um arco de raio r, a aceleração 
+                  tangencial também pode ser escrita como:</p>
                 $$a_t = r \cdot \alpha$$
                 
                 <div class="img3">
@@ -696,7 +726,8 @@ centrípeta e aceleração tangencial. </p>
                 
                 <p>Logo:</p>
                 $$\alpha = \frac{g}{r} \sin\theta$$
-                <p>Essa equação descreve como a gravidade produz aceleração angular durante o movimento da haste.</p>
+                <p>Essa equação descreve como a gravidade produz 
+                  aceleração angular durante o movimento da haste.</p>
 
                 <h4 id="forca-radial">Força radial</h4>
                 <p>A força radial resultante é responsável por manter a massa na trajetória circular:</p>
@@ -709,7 +740,10 @@ centrípeta e aceleração tangencial. </p>
                 $$F_{\text{haste},r} - m \cdot g \cdot \cos\theta = m \frac{v^2}{r}$$
                 <p>Assim:</p>
                 $$F_{\text{haste},r} = m \frac{v^2}{r} + m \cdot g \cdot \cos\theta$$
-                <p>O sinal da força exercida pela haste indica sua direção: ela pode atuar para fora ou para dentro, conforme as condições do movimento. Diferentemente de um fio flexível, uma haste rígida pode exercer tração ou compressão.</p>
+                <p>O sinal da força exercida pela haste indica sua direção: 
+                  ela pode atuar para fora ou para dentro, conforme as 
+                  condições do movimento. Diferentemente de um fio 
+                  flexível, uma haste rígida pode exercer tração ou compressão.</p>
 
                 <h4 id="aplicacoes-newton">Aplicações dos cálculos na máquina</h4>
                 <p>Considerando uma massa de 0,02 kg, presa a uma haste de 0,21 m, que passa por um 
@@ -898,9 +932,12 @@ centrípeta e aceleração tangencial. </p>
                    movimento em relação à gravidade.</p>
 
                 <h4 id="haste-experimento">A haste rígida do experimento</h4>
-                <p>Para uma massa presa a uma haste rígida, na posição inferior, a equação radial pode ser escrita como:</p>
+                <p>Para uma massa presa a uma haste rígida, na posição 
+                  inferior, a equação radial pode ser escrita como:</p>
                 $$F_{\text{haste}} - m \cdot g = \frac{m \cdot v^2}{r} \implies F_{\text{haste}} = \frac{m \cdot v^2}{r} + m \cdot g$$
-                <p>Esse resultado representa a componente radial da força exercida pela haste. Na posição superior, a componente radial do peso aponta para o centro, de modo que:</p>
+                <p>Esse resultado representa a componente radial da força 
+                  exercida pela haste. Na posição superior, a componente 
+                  radial do peso aponta para o centro, de modo que:</p>
                 $$F_{\text{haste}} = \frac{m \cdot v^2}{r} - m \cdot g$$
                 <p>
                   Aqui, o sinal positivo representa uma força para dentro e o negativo, uma força 
@@ -1886,6 +1923,15 @@ suas perdas e ampliar sua autonomia de funcionamento.
         </footer>
     </main>
 <br><br>
+ <div class="logo"><h4>Pesquisas e referências.</h4></div>
+ <ul class="links">
+      <li><a href="PáginaAuxiliar.html" target="_blank">Argumentos complementares</a></li>
+      <br>
+      <li><a href="Bibliografia.html" target="_blank">Bibliografia</a></li>
+      <br>
+       <li><a href="EstudosRelacionados.html" target="_blank">Estudos relacionados</a></li>
+    </ul>
+
    <div class="resources-list" style="margin-top:12px">
             <div class="resource">
               <div>
