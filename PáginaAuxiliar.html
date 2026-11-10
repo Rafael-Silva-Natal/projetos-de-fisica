@@ -38,7 +38,172 @@
           width: 100%;
         }
 </style>
+<style>
+
+.container-textos {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    width: 90%;
+    margin: auto;
+}
+
+.paragrafo {
+    flex: 1;
+    padding: 20px;
+    background-color: rgba(255,255,255,0.8);
+    border-radius: 12px;
+    text-align: justify;
+}
+
+.paragrafo p {
+    text-indent: 2em;
+    line-height: 1.6;
+}
+
+
+.container-imagem {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    width: 90%;
+    margin: auto;
+}
+
+.texto {
+    flex: 1;
+    text-align: justify;
+    padding: 15px;
+}
+
+.imagem {
+    flex: 1;
+}
+
+.imagem img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 15px;
+}
+
+
+.container-canvas {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    width: 90%;
+    margin: auto;
+}
+
+.texto-canvas {
+    flex: 1;
+    text-align: justify;
+}
+
+.area-canvas {
+    flex: 1;
+}
+
+.area-canvas canvas {
+    width: 100%;
+    height: auto;
+    background-color: white;
+    border: 2px solid #555;
+    border-radius: 10px;
+}
+
+
+.container-imagens {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    width: 90%;
+    margin: auto;
+}
+
+.imagem-item {
+    flex: 1;
+    text-align: center;
+}
+
+.imagem-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    border-radius: 12px;
+    border: 2px solid #777;
+}
+
+.imagem-item p {
+    font-size: 18px;
+}
+
+.container-video {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    width: 90%;
+    margin: auto;
+}
+
+.texto-video {
+    flex: 1;
+    text-align: justify;
+}
+
+.area-video {
+    flex: 1;
+}
+
+.area-video video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    border: 2px solid #555;
+}
+
+</style>
 <body>
+  <!--
+  
+/* Adaptação para celulares e telas pequenas */
+
+@media (max-width: 768px) {
+
+    .container-textos,
+    .container-imagem,
+    .container-canvas,
+    .container-imagens,
+    .container-video {
+
+        flex-direction: column;
+        width: 95%;
+        gap: 15px;
+    }
+
+    .paragrafo,
+    .texto,
+    .texto-canvas,
+    .texto-video,
+    .imagem,
+    .area-canvas,
+    .imagem-item,
+    .area-video {
+
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .imagem img {
+        max-width: 100%;
+    }
+
+}
+
+  -->
  <div class="img">
                 <img src="imagens/cabeçalho.png" alt="Cabeçalho IFRN / FNDE" width="5%">
             </div>
@@ -51,5 +216,139 @@
         </header>
 <h1>Argumentos complementares</h1>
 <P>Página em desenvolvimento</P> 
+
+
+
+<div class="container-textos">
+
+    <div class="paragrafo">
+        <h2>Primeiro título</h2>
+        <p>
+            A Física estuda os fenômenos naturais
+            e procura compreender as relações entre
+            matéria, energia e movimento.
+        </p>
+    </div>
+
+    <div class="paragrafo">
+        <h2>Segundo título</h2>
+        <p>
+            Por meio de modelos matemáticos e
+            experimentos, podemos representar e
+            analisar diferentes fenômenos físicos.
+        </p>
+    </div>
+
+</div>
+
+<div class="container-imagem">
+
+    <div class="texto">
+        <h2>Movimento pendular</h2>
+        <p>
+            O pêndulo é um sistema físico que
+            permite estudar o movimento oscilatório
+            e a transformação de energia potencial
+            em energia cinética.
+        </p>
+    </div>
+
+    <div class="imagem">
+        <img src="Imagens/pendulo.jpg" alt="Pêndulo">
+    </div>
+
+</div>
+
+<div class="container-canvas">
+
+    <div class="texto-canvas">
+        <h2>Representação gráfica</h2>
+        <p>
+            O canvas permite construir representações
+            visuais de fenômenos físicos, como
+            trajetórias, oscilações e gráficos
+            de movimento.
+        </p>
+    </div>
+
+    <div class="area-canvas">
+        <canvas id="meuCanvas" width="400" height="250">
+        </canvas>
+    </div>
+
+</div>
+<script>
+
+const canvas = document.getElementById("meuCanvas");
+const ctx = canvas.getContext("2d");
+
+// Eixos
+ctx.beginPath();
+ctx.moveTo(30, 20);
+ctx.lineTo(30, 220);
+ctx.lineTo(380, 220);
+ctx.strokeStyle = "#333";
+ctx.stroke();
+
+// Curva senoidal
+ctx.beginPath();
+
+for (let x = 30; x < 380; x++) {
+    let y = 120 - 70 * Math.sin((x - 30) * 0.04);
+
+    if (x === 30) {
+        ctx.moveTo(x, y);
+    } else {
+        ctx.lineTo(x, y);
+    }
+}
+
+ctx.strokeStyle = "#16A34A";
+ctx.lineWidth = 3;
+ctx.stroke();
+
+</script>
+
+
+<div class="container-imagens">
+
+    <div class="imagem-item">
+        <img src="Imagens/pendulo.jpg" alt="Pêndulo">
+        <p>Imagem 1 - Pêndulo</p>
+    </div>
+
+    <div class="imagem-item">
+        <img src="Imagens/engrenagens.jpg" alt="Engrenagens">
+        <p>Imagem 2 - Engrenagens</p>
+    </div>
+
+</div>
+
+<div class="container-video">
+
+    <div class="texto-video">
+        <h2>Funcionamento da máquina</h2>
+
+        <p>
+            A utilização de vídeos permite apresentar
+            o funcionamento de equipamentos,
+            experimentos e fenômenos físicos
+            em movimento.
+        </p>
+    </div>
+
+    <div class="area-video">
+        <video controls>
+            <source src="Videos/experimento.mp4"
+                    type="video/mp4">
+
+            Seu navegador não suporta vídeos.
+        </video>
+    </div>
+
+</div>
+
+
+
 </body>
 </html>
